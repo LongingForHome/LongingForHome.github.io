@@ -1,3 +1,5 @@
+alert("loading JS...");
+
 kWidget.addReadyCallback(playerId => {
   let kdp = document.getElementById(playerId);
   kdp.kBind("playerReady", function() {
