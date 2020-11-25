@@ -2,6 +2,11 @@ alert("loaded sample JS...");
 
 //try to get the player container kWidgetIframeContainer   mwEmbedKalturaIframe
 
+
+$( "#mwEmbedKalturaIframe" ).append("<p>Hi, I'm new here</p>");
+
+
+/*
 mw.kalturaPluginWrapper(function(){
 
 
@@ -157,3 +162,4 @@ mw.kalturaPluginWrapper(function(){
 //})(window.mw, window.jQuery, window.ko);
 
 });
+*/
