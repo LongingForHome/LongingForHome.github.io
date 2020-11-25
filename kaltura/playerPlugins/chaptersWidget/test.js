@@ -1,6 +1,11 @@
 alert("loaded sample JS...");
 
-(function (mw, $) {
+//try to get the player container kWidgetIframeContainer   mwEmbedKalturaIframe
+
+mw.kalturaPluginWrapper(function(){
+
+
+//(function (mw, $) {
     "use strict";
     mw.PluginManager.add('chaptersWidget', mw.KBasePlugin.extend({
         defaultConfig: {
@@ -149,4 +154,6 @@ alert("loaded sample JS...");
         },
     }));
 
-})(window.mw, window.jQuery, window.ko);
+//})(window.mw, window.jQuery, window.ko);
+
+});
