@@ -3,7 +3,7 @@ alert("loaded sample JS...");
 //try to get the player container kWidgetIframeContainer   mwEmbedKalturaIframe
 
 
-$( "#mwEmbedKalturaIframe" ).append("<p>Hi, I'm new here</p>");
+$( ".kWidgetIframeContainer" ).append("<p>Hi, I'm new here</p>");
 
 
 /*
