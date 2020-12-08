@@ -39,6 +39,7 @@ mw.kalturaPluginWrapper(function(){
             }, function( data ) {
                 
 				console.log(data.objects);
+				console.log(JSON.stringify(data.objects));
 				//_this.setCuePoints( data.objects );
 				//callback();
             });
