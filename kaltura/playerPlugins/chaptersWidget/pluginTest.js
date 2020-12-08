@@ -37,10 +37,7 @@ mw.kalturaPluginWrapper(function(){
                 'filter:cuePointTypeEqual':	'annotation.Annotation',
 				'filter:tagsLike' : this.getConfig('tags') || 'chaptering'
             }, function( data ) {
-                // if an error pop out:
-				if( ! _this.handleDataError( data ) ){
-					return ;
-				}
+                
 				console.log(data.objects);
 				//_this.setCuePoints( data.objects );
 				//callback();
