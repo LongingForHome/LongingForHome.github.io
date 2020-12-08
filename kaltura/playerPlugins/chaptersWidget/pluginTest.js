@@ -19,7 +19,33 @@ mw.kalturaPluginWrapper(function(){
 		              // do something on player ready
 		       });
 		       console.log("player setup called...");
-		}
+		       this.loadChaptersFromApi();
+		},
+		loadChaptersFromApi: function( callback ){
+            console.log("Getting chapters...");
+            if(!this.getPlayer().kentryid){
+                this.log('loadChaptersFromApi:: Entry Id not found, exit.');
+                callback([]);
+                return;            
+            }
+            var _this = this;
+            this.getKalturaClient().doRequest( {
+                'service' : 'cuepoint_cuepoint',
+                'action' : 'list',
+                'filter:objectType' : 'KalturaCuePointFilter',
+                'filter:entryIdEqual' : this.getPlayer().kentryid,
+                'filter:cuePointTypeEqual':	'annotation.Annotation',
+				'filter:tagsLike' : this.getConfig('tags') || 'chaptering'
+            }, function( data ) {
+                // if an error pop out:
+				if( ! _this.handleDataError( data ) ){
+					return ;
+				}
+				console.log(data.objects);
+				//_this.setCuePoints( data.objects );
+				//callback();
+            });
+        }
 	}));
 
 });
