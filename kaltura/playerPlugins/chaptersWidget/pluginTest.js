@@ -1,7 +1,7 @@
 console.log("player external JS loaded...");
 mw.kalturaPluginWrapper(function(){
 
-	mw.PluginManager.add( 'myComponent', mw.KBaseComponent.extend({
+	mw.PluginManager.add( 'chaptersWidget', mw.KBaseComponent.extend({
 		defaultConfig: {
 			parent: "controlsContainer",    // the container for the button 
 			order: 41,                      // the display order ( based on layout )
@@ -12,15 +12,6 @@ mw.kalturaPluginWrapper(function(){
 			href: 'http://www.kaltura.com', // the link for the logo
 			title: 'Kaltura',               // title
 			img: null                       // image
-		},
-		isSafeEnviornment:function(){
-		        // any runtime checks to determine the plugin can be active 
-		        // for example if you need to check if this partner has a key against your service: 
-		        var deferred = $.Deferred();
-		       $.ajax ( myAjaxRequst, function( data ){
-		           deferred.resolve( !!data.isUserAllowed );
-		        });
-		        return deferred.promise();
 		},
 		setup: function(){
 		       // The place to set any of your player bindings like:
