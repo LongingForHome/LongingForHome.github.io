@@ -44,9 +44,12 @@ mw.kalturaPluginWrapper(function(){
 					console.log("adding chapters container...");
 		       		_this.getChaptersWidgetContainer();
 		       		console.log("adding chapters to widget...");
+		       		$('.chaptersInterface').append('<ul id="chaptersList">');
 					$.each(data.objects, function (index, chapter) {
 						console.log(chapter.title);
+						$('#chaptersList').append('<li><button type="button">' + chapter.title + '</button></li>');
 					});
+					$('.chaptersInterface').append('</ul>');
 				}				
             });
         },
