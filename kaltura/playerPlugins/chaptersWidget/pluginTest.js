@@ -19,7 +19,7 @@ mw.kalturaPluginWrapper(function(){
 		},
 		loadChaptersFromApi: function( callback ){
             console.log("Getting chapters...");
-            this.sendNotification('doPlay',100);
+            //this.sendNotification('doPlay',100);
             if(!this.getPlayer().kentryid){
                 this.log('loadChaptersFromApi:: Entry Id not found, exit.');
                 callback([]);
@@ -36,6 +36,9 @@ mw.kalturaPluginWrapper(function(){
                 
 				console.log(data.objects);
 				console.log(JSON.stringify(data.objects));
+				$.each(data.objects, function (index, chapter) {
+					console.log(chapter.title);
+				});
 				//_this.setCuePoints( data.objects );
 				//callback();
             });
