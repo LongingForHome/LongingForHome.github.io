@@ -15,6 +15,10 @@ mw.kalturaPluginWrapper(function(){
 		              // do something on player ready
 		       });
 		       console.log("player setup called...");
+
+		       console.log("adding chapters container...");
+		       this.getChaptersWidgetContainer();
+
 		       this.loadChaptersFromApi();
 		},
 		loadChaptersFromApi: function( callback ){
@@ -37,6 +41,7 @@ mw.kalturaPluginWrapper(function(){
                 
 				console.log(data.objects);
 				console.log(JSON.stringify(data.objects));
+				console.log("adding chapters to widget...");
 				$.each(data.objects, function (index, chapter) {
 					console.log(chapter.title);
 				});
