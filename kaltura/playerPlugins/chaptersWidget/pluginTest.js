@@ -61,7 +61,7 @@ mw.kalturaPluginWrapper(function(){
             $( ".videoHolder, .mwPlayerContainer" ).css( "width", "100%" );
             $( ".videoHolder, .mwPlayerContainer" ).css( "height",$( ".mwPlayerContainer").height() - this.getConfig( 'moduleHeight' ) );
             $( ".chaptersInterface" ).css( {height: this.getConfig( 'moduleHeight' ) , width:'100%'} );
-            console.log("template: " + this.getHTML() + " ...");
+            //console.log("template: " + this.getHTML() + " ...");
             $( ".chaptersInterface" ).append(this.getHTML()); 
             
         },
@@ -78,7 +78,7 @@ mw.kalturaPluginWrapper(function(){
 		            template = data;
 		        }
 		    });
-
+		    console.log("template: " + template + " ...");
 		    return template;        	           
         }
 	}));
