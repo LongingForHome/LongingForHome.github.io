@@ -3,10 +3,10 @@ mw.kalturaPluginWrapper(function(){
 
 	mw.PluginManager.add( 'chaptersWidget', mw.KBaseComponent.extend({
 		defaultConfig: {
-			templatePath: 'transcript/templates/transcript.tmpl.html',
+			templatePath: 'https://longingforhome.github.io/kaltura/playerPlugins/chaptersWidget/chaptersWidget.tmpl.html',
             moduleWidth: '300',
             moduleHeight: '250',
-            transcriptTargetId: 'transcriptHolder',
+            chaptersWidgetTargetId: 'chaptersWidget',
             containerPosition: 'bottom'
 		},
 		setup: function(){
@@ -19,6 +19,7 @@ mw.kalturaPluginWrapper(function(){
 		},
 		loadChaptersFromApi: function( callback ){
             console.log("Getting chapters...");
+            mw.sendNotification('doPlay',100);
             if(!this.getPlayer().kentryid){
                 this.log('loadChaptersFromApi:: Entry Id not found, exit.');
                 callback([]);
@@ -38,6 +39,31 @@ mw.kalturaPluginWrapper(function(){
 				//_this.setCuePoints( data.objects );
 				//callback();
             });
+        },
+        getChaptersWidgetContainer: function() {
+        	// // wrap the .mwPlayerContainer element with our transcriptInterface div
+            var floatDirection = this.getConfig( 'containerPosition' ) ? this.getConfig( 'containerPosition' ) : "bottom";
+            var chaptersInterfaceElements = "<div class='chaptersInterface' style='position: relative; width: " + this.getConfig( 'moduleWidth' ) + "px; height: 100%; float:" + floatDirection + "'>";
+            //
+            $('.mwPlayerContainer').after(chaptersInterfaceElements);
+            this.$chaptersContainer = $( ".chaptersInterface");
+            $( ".videoHolder, .mwPlayerContainer" ).css( "width", "100%" );
+            $( ".videoHolder, .mwPlayerContainer" ).css( "height",$( ".mwPlayerContainer").height() - this.getConfig( 'moduleHeight' ) );
+            $( ".chaptersInterface" ).css( {height: this.getConfig( 'moduleHeight' ) , width:'100%'} );
+
+            this.$chaptersContainer.append(this.getHTML());
+            this.originalPlayerWidth = $( ".videoHolder").width();
+
+            return this.$chaptersContainer;
+        },
+        getHTML : function(){
+            var templatePath = this.getConfig( 'templatePath' );
+            var rawHTML = window.kalturaIframePackageData.templates[ templatePath ];
+
+            return rawHTML;
+        },
+        playChapter: function(timestamp) {
+
         }
 	}));
 
