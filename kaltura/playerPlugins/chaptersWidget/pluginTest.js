@@ -47,7 +47,7 @@ mw.kalturaPluginWrapper(function(){
 		       		$('.chaptersInterface').append('<ul id="chaptersList">');
 					$.each(data.objects, function (index, chapter) {
 						console.log(chapter.title);
-						$('#chaptersList').append('<li><button type="button">' + chapter.title + '</button></li>');
+						$('#chaptersList').append('<li><button type="button" onclick="playChapter(' + chapter.startTime + ')">' + chapter.title + '</button></li>');
 					});
 					$('.chaptersInterface').append('</ul>');
 				}				
@@ -76,7 +76,9 @@ mw.kalturaPluginWrapper(function(){
             return rawHTML;
         },
         playChapter: function(timestamp) {
-
+        	var _this = this;
+        	console.log("clicked to play at " + timestamp + " ...");
+        	_this.getPlayer().sendNotification("doSeek", timestamp);
         }
 	}));
 
