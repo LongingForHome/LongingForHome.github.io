@@ -43,7 +43,7 @@ mw.kalturaPluginWrapper(function(){
 					console.log("adding chapters container...");
 		       		_this.getChaptersWidgetContainer();
 		       		console.log("adding chapters to widget...");
-		       		$('.chaptersInterface').append('<div id="chaptersList"></div>');
+		       		//$('.chaptersInterface').append('<div id="chaptersList"></div>').css("background-color":"#eaeaea");
 					$.each(data.objects, function (index, chapter) {
 						console.log(chapter.title);
 						$('#chaptersList').append(' ', $('<button>').addClass('chapterButtons').attr('timestamp', chapter.startTime).html(chapter.title).on('click', function(e) {_this.getPlayer().sendNotification("doSeek", Math.floor((chapter.startTime)/1000));}));
@@ -62,15 +62,15 @@ mw.kalturaPluginWrapper(function(){
             $( ".videoHolder, .mwPlayerContainer" ).css( "height",$( ".mwPlayerContainer").height() - this.getConfig( 'moduleHeight' ) );
             $( ".chaptersInterface" ).css( {height: this.getConfig( 'moduleHeight' ) , width:'100%'} );
             console.log("template: " + this.getHTML() + " ...");
-            $( ".chaptersInterface" ).append(this.getHTML());
+            //$( ".chaptersInterface" ).append(this.getHTML());
             
         },
         getHTML : function(){
         	console.log("getting template html...");
-            var templatePath = this.getConfig( 'templatePath' );
-            var rawHTML = window.kalturaIframePackageData.templates[ templatePath ];
-
-            return rawHTML;
+        	var templatePath = this.getConfig( 'templatePath' );
+        	$.get( templatePath, function( template ) {
+		  		return template;
+			});              
         }
 	}));
 
