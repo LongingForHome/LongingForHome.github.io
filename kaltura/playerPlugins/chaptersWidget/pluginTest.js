@@ -68,9 +68,18 @@ mw.kalturaPluginWrapper(function(){
         getHTML : function(){
         	console.log("getting template html...");
         	var templatePath = this.getConfig( 'templatePath' );
-        	$.get( templatePath, function( template ) {
-		  		return template;
-			});              
+        	var template;
+
+		    $.ajax({
+		        type: "GET",
+		        url: templatePath,
+		        async: false,
+		        success : function(data) {
+		            template = data;
+		        }
+		    });
+
+		    return template;        	           
         }
 	}));
 
