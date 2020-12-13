@@ -19,7 +19,7 @@ mw.kalturaPluginWrapper(function(){
 		},
 		loadChaptersFromApi: function( callback ){
             console.log("Getting chapters...");
-            mw.sendNotification('doPlay',100);
+            this.sendNotification('doPlay',100);
             if(!this.getPlayer().kentryid){
                 this.log('loadChaptersFromApi:: Entry Id not found, exit.');
                 callback([]);
