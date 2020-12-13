@@ -3,15 +3,11 @@ mw.kalturaPluginWrapper(function(){
 
 	mw.PluginManager.add( 'chaptersWidget', mw.KBaseComponent.extend({
 		defaultConfig: {
-			parent: "controlsContainer",    // the container for the button 
-			order: 41,                      // the display order ( based on layout )
-			displayImportance: 'low',       // the display importance, determines when the item is removed from DOM
-			align: "right",                 // the alignment of the button
-
-			cssClass: "kaltura-logo",       // the css name of the logo
-			href: 'http://www.kaltura.com', // the link for the logo
-			title: 'Kaltura',               // title
-			img: null                       // image
+			templatePath: 'transcript/templates/transcript.tmpl.html',
+            moduleWidth: '300',
+            moduleHeight: '250',
+            transcriptTargetId: 'transcriptHolder',
+            containerPosition: 'bottom'
 		},
 		setup: function(){
 		       // The place to set any of your player bindings like:
@@ -34,8 +30,7 @@ mw.kalturaPluginWrapper(function(){
                 'action' : 'list',
                 'filter:objectType' : 'KalturaCuePointFilter',
                 'filter:entryIdEqual' : this.getPlayer().kentryid,
-                'filter:cuePointTypeEqual':	'annotation.Annotation',
-				'filter:tagsLike' : this.getConfig('tags') || 'chaptering'
+                'filter:cuePointTypeEqual':	'thumbCuePoint.Thumb'				
             }, function( data ) {
                 
 				console.log(data.objects);
