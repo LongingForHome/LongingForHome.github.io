@@ -38,8 +38,7 @@ mw.kalturaPluginWrapper(function(){
                 'filter:orderBy': '+startTime'			
             }, function( data ) {
                 
-				console.log(data.objects);
-				console.log(JSON.stringify(data.objects));
+				//console.log(JSON.stringify(data.objects));
 				if (data.totalCount > 0) {
 					console.log("adding chapters container...");
 		       		_this.getChaptersWidgetContainer();
@@ -47,7 +46,7 @@ mw.kalturaPluginWrapper(function(){
 		       		$('.chaptersInterface').append('<div id="chaptersList"></div>');
 					$.each(data.objects, function (index, chapter) {
 						console.log(chapter.title);
-						$('#chaptersList').append(' ', $('<button>').addClass('chapterButtons').attr('timestamp', chapter.startTime).prop('value', chapter.title).on('click', function(e) {_this.getPlayer().sendNotification("doSeek", Math.floor((chapter.startTime)/1000));}));
+						$('#chaptersList').append(' ', $('<button>').addClass('chapterButtons').attr('timestamp', chapter.startTime).html(chapter.title).on('click', function(e) {_this.getPlayer().sendNotification("doSeek", Math.floor((chapter.startTime)/1000));}));
 					});					
 				}				
             });
