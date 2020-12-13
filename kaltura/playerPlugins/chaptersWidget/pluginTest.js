@@ -62,7 +62,7 @@ mw.kalturaPluginWrapper(function(){
             $( ".videoHolder, .mwPlayerContainer" ).css( "height",$( ".mwPlayerContainer").height() - this.getConfig( 'moduleHeight' ) );
             $( ".chaptersInterface" ).css( {height: this.getConfig( 'moduleHeight' ) , width:'100%'} );
             console.log("template: " + this.getHTML() + " ...");
-            //$( ".chaptersInterface" ).append(this.getHTML());
+            $( ".chaptersInterface" ).append(this.getHTML()); 
             
         },
         getHTML : function(){
