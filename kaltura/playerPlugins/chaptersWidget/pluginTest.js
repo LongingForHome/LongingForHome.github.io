@@ -5,7 +5,7 @@ mw.kalturaPluginWrapper(function(){
 		defaultConfig: {
 			templatePath: 'https://longingforhome.github.io/kaltura/playerPlugins/chaptersWidget/chaptersWidget.tmpl.html',
             moduleWidth: '300',
-            moduleHeight: '250',
+            moduleHeight: '200',
             chaptersWidgetTargetId: 'chaptersWidget',
             containerPosition: 'bottom'
 		},
@@ -44,12 +44,11 @@ mw.kalturaPluginWrapper(function(){
 					console.log("adding chapters container...");
 		       		_this.getChaptersWidgetContainer();
 		       		console.log("adding chapters to widget...");
-		       		$('.chaptersInterface').append('<ul id="chaptersList">');
+		       		$('.chaptersInterface').append('<div id="chaptersList"></div>');
 					$.each(data.objects, function (index, chapter) {
 						console.log(chapter.title);
-						$('#chaptersList').append('<li><button type="button" onclick="playChapter(' + chapter.startTime + ')">' + chapter.title + '</button></li>');
-					});
-					$('.chaptersInterface').append('</ul>');
+						$('#chaptersList').append(' ', $('<button>').attr('timestamp', chapter.startTime).prop('value', chapter.title).on('click', function(e) {_this.getPlayer().sendNotification("doSeek", chapter.startTime);}));
+					});					
 				}				
             });
         },
