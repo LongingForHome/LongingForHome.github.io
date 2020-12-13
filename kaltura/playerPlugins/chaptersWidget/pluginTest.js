@@ -47,7 +47,7 @@ mw.kalturaPluginWrapper(function(){
 		       		$('.chaptersInterface').append('<div id="chaptersList"></div>');
 					$.each(data.objects, function (index, chapter) {
 						console.log(chapter.title);
-						$('#chaptersList').append(' ', $('<button>').attr('timestamp', chapter.startTime).prop('value', chapter.title).on('click', function(e) {_this.getPlayer().sendNotification("doSeek", Math.floor((chapter.startTime)/1000));}));
+						$('#chaptersList').append(' ', $('<button>').addClass('chapterButtons').attr('timestamp', chapter.startTime).prop('value', chapter.title).on('click', function(e) {_this.getPlayer().sendNotification("doSeek", Math.floor((chapter.startTime)/1000));}));
 					});					
 				}				
             });
@@ -69,6 +69,7 @@ mw.kalturaPluginWrapper(function(){
             return this.$chaptersContainer;
         },
         getHTML : function(){
+        	console.log("getting template html...");
             var templatePath = this.getConfig( 'templatePath' );
             var rawHTML = window.kalturaIframePackageData.templates[ templatePath ];
 
