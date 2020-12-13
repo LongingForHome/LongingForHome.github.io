@@ -42,7 +42,7 @@ mw.kalturaPluginWrapper(function(){
 				console.log(JSON.stringify(data.objects));
 				if (data.totalCount > 0) {
 					console.log("adding chapters container...");
-		       		this.getChaptersWidgetContainer();
+		       		_this.getChaptersWidgetContainer();
 		       		console.log("adding chapters to widget...");
 					$.each(data.objects, function (index, chapter) {
 						console.log(chapter.title);
