@@ -47,7 +47,7 @@ mw.kalturaPluginWrapper(function(){
 		       		$('.chaptersInterface').append('<div id="chaptersList"></div>');
 					$.each(data.objects, function (index, chapter) {
 						console.log(chapter.title);
-						$('#chaptersList').append(' ', $('<button>').attr('timestamp', chapter.startTime).prop('value', chapter.title).on('click', function(e) {_this.getPlayer().sendNotification("doSeek", Math.ceil(chapter.startTime)/1000);}));
+						$('#chaptersList').append(' ', $('<button>').attr('timestamp', chapter.startTime).prop('value', chapter.title).on('click', function(e) {_this.getPlayer().sendNotification("doSeek", Math.floor((chapter.startTime)/1000));}));
 					});					
 				}				
             });
