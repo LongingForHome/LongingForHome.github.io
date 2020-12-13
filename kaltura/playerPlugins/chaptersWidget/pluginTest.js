@@ -73,11 +73,6 @@ mw.kalturaPluginWrapper(function(){
             var rawHTML = window.kalturaIframePackageData.templates[ templatePath ];
 
             return rawHTML;
-        },
-        playChapter: function(timestamp) {
-        	var _this = this;
-        	console.log("clicked to play at " + timestamp + " ...");
-        	_this.getPlayer().sendNotification("doSeek", timestamp);
         }
 	}));
 
