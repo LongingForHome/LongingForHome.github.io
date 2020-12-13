@@ -31,7 +31,8 @@ mw.kalturaPluginWrapper(function(){
                 'action' : 'list',
                 'filter:objectType' : 'KalturaCuePointFilter',
                 'filter:entryIdEqual' : this.getPlayer().kentryid,
-                'filter:cuePointTypeEqual':	'thumbCuePoint.Thumb'				
+                'filter:cuePointTypeEqual':	'thumbCuePoint.Thumb',	
+                'filter:orderBy': '+startTime'			
             }, function( data ) {
                 
 				console.log(data.objects);
