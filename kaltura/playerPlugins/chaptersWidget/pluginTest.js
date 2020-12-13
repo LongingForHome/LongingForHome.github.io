@@ -16,8 +16,7 @@ mw.kalturaPluginWrapper(function(){
 		       });
 		       console.log("player setup called...");
 
-		       console.log("adding chapters container...");
-		       this.getChaptersWidgetContainer();
+		       
 
 		       this.loadChaptersFromApi();
 		},
@@ -41,12 +40,14 @@ mw.kalturaPluginWrapper(function(){
                 
 				console.log(data.objects);
 				console.log(JSON.stringify(data.objects));
-				console.log("adding chapters to widget...");
-				$.each(data.objects, function (index, chapter) {
-					console.log(chapter.title);
-				});
-				//_this.setCuePoints( data.objects );
-				//callback();
+				if (data.totalCount > 0) {
+					console.log("adding chapters container...");
+		       		this.getChaptersWidgetContainer();
+		       		console.log("adding chapters to widget...");
+					$.each(data.objects, function (index, chapter) {
+						console.log(chapter.title);
+					});
+				}				
             });
         },
         getChaptersWidgetContainer: function() {
