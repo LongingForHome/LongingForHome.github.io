@@ -1,16 +1,67 @@
-<!--
+
 <style>
-	.chapterButtons {
-		background-color: #4CAF50; /* Green background */
-		border: 1px solid green; /* Green border */
-		color: white; /* White text */
-		padding: 10px 24px; /* Some padding */
-		cursor: pointer; /* Pointer/hand icon */
-		width: 50%; /* Set a width if needed */
-		display: block; /* Make the buttons appear below each other */
-	}
+.chaptersInterface {
+	width: 100%;
+    background-color: #eaeaea;
+    font-family: Poppins, sans-serif;
+}
+
+#chaptersContainer {
+	height: 300px;
+	font-family: Poppins, sans-serif;
+	letter-spacing: 1px;
+}
+
+.chaptersHeader {
+	display: block;
+    color: #242424;
+    background: #e1e1e1;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.chaptersList {
+	display: block;
+	overflow: auto;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.chapterLink {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 5px;
+	
+}
+
+.chapterItem {
+	
+	padding: 10px;
+}
+
+.chapterTime {
+	text-align: center;
+	flex-basis: 75px;
+	color: white;
+	background-color: #B2334E;
+}
+
+.chapterTitle {
+	flex: 1;
+	color: black;
+	background-color: #e1e1e1;
+}
+
 </style>
--->
-<div id="chaptersList"></div>
+
+<div id="chaptersContainer">
+	<div class="chaptersHeader">Video Chapters</div>
+	<div id="chaptersList" class="chaptersList">
+		<div class="chapterLink"><div class="chapterItem chapterTime"><span>00:00:00</span></div><div class="chapterItem chapterTitle">Title</div></div>
+		<div class="chapterLink"><div class="chapterItem chapterTime"><span>00:05:00</span></div><div class="chapterItem chapterTitle">Title 2</div></div>
+	</div>
+</div>
+
 
 
