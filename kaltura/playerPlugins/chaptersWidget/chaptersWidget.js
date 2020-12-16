@@ -94,5 +94,4 @@ mw.kalturaPluginWrapper(function(){
 		    return template;        	           
         }
 	}));
-
 });
