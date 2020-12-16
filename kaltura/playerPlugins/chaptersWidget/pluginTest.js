@@ -1,4 +1,4 @@
-console.log("player external JS loaded...");
+//console.log("player external JS loaded...");
 mw.kalturaPluginWrapper(function(){
 
 	mw.PluginManager.add( 'chaptersWidget', mw.KBaseComponent.extend({
@@ -14,20 +14,19 @@ mw.kalturaPluginWrapper(function(){
 		      this.bind( 'playerReady', function(){
 		              // do something on player ready
 		       });
-		       console.log("player setup called...");
-
-		       
-
+		       //console.log("player setup called...");  
+		       // try to get any chapters associated with the entry
 		       this.loadChaptersFromApi();
 		},
 		loadChaptersFromApi: function( callback ){
-            console.log("Getting chapters...");
+            //console.log("Getting chapters...");
             //this.sendNotification('doPlay',100);
             if(!this.getPlayer().kentryid){
                 this.log('loadChaptersFromApi:: Entry Id not found, exit.');
                 callback([]);
                 return;            
             }
+            // use the Kaltura Client to make the request for chapters
             var _this = this;
             this.getKalturaClient().doRequest( {
                 'service' : 'cuepoint_cuepoint',
@@ -36,9 +35,9 @@ mw.kalturaPluginWrapper(function(){
                 'filter:entryIdEqual' : this.getPlayer().kentryid,
                 'filter:cuePointTypeEqual':	'thumbCuePoint.Thumb',	
                 'filter:orderBy': '+startTime'			
-            }, function( data ) {
-                
+            }, function( data ) {                
 				//console.log(JSON.stringify(data.objects));
+				// if there are no chapters, then don't load the container
 				if (data.totalCount > 0) {
 					console.log("adding chapters container...");
 		       		_this.getChaptersWidgetContainer();
@@ -51,6 +50,10 @@ mw.kalturaPluginWrapper(function(){
 						//$('#chaptersList').append('<div id="' + seconds + '" class="chapterLink"><div class="chapterItem chapterTime"><span>' + timestamp + '</span></div><div class="chapterItem chapterTitle">' + chapter.title + '</div></div>').on('click', function(e) {_this.getPlayer().sendNotification("doSeek", seconds);});
 						$('#chaptersList').append(' ', $('<div id="' + seconds + '" class="chapterLink"><div class="chapterItem chapterTime"><span>' + timestamp + '</span></div><div class="chapterItem chapterTitle">' + chapter.title + '</div></div>').on('click', function(e) {_this.getPlayer().sendNotification("doSeek", seconds);}));
 					});					
+				}
+				else {
+					// remove the added height needed for the chapters widget
+					$( ".kWidgetIframeContainer" ).css( "height",$( ".kWidgetIframeContainer").height() - this.getConfig( 'moduleHeight' ) );
 				}				
             });
         },
@@ -60,7 +63,7 @@ mw.kalturaPluginWrapper(function(){
             var chaptersInterfaceElements = "<div class='chaptersInterface' style='position: relative; width: " + this.getConfig( 'moduleWidth' ) + "px; height: 100%; float:" + floatDirection + "'>";
             //
             $('.mwPlayerContainer').after(chaptersInterfaceElements);
-            this.$chaptersContainer = $( ".chaptersInterface");
+            //this.$chaptersContainer = $( ".chaptersInterface");
             $( ".videoHolder, .mwPlayerContainer" ).css( "width", "100%" );
             $( ".videoHolder, .mwPlayerContainer" ).css( "height",$( ".mwPlayerContainer").height() - this.getConfig( 'moduleHeight' ) );
             $( ".chaptersInterface" ).css( {height: this.getConfig( 'moduleHeight' ) , width:'100%'} );
@@ -69,7 +72,7 @@ mw.kalturaPluginWrapper(function(){
             
         },
         getHTML : function(){
-        	console.log("getting template html...");
+        	//console.log("getting template html...");
         	var templatePath = this.getConfig( 'templatePath' );
         	var template;
 
@@ -81,7 +84,7 @@ mw.kalturaPluginWrapper(function(){
 		            template = data;
 		        }
 		    });
-		    console.log("template: " + template + " ...");
+		    //console.log("template: " + template + " ...");
 		    return template;        	           
         }
 	}));
