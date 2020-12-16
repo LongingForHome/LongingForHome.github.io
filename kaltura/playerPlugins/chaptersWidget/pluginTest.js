@@ -59,6 +59,13 @@ mw.kalturaPluginWrapper(function(){
 					$( ".mwPlayerContainer" ).css( "height", resetHeight );
 					// hack to force page redraw of the new element height
 					$( ".kWidgetIframeContainer" ).hide(); 
+					//try to select the parent container
+					if ($('.kWidgetIframeContainer').length) {
+						console.log("found it!");
+					}
+					else {
+						console.log("out of scope");
+					}
 				}				
             });
         },
