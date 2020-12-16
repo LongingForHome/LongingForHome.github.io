@@ -44,11 +44,11 @@ mw.kalturaPluginWrapper(function(){
 		       		_this.getChaptersWidgetContainer();
 		       		console.log("adding chapters to widget...");
 					$.each(data.objects, function (index, chapter) {
-						console.log(chapter.title);
+						//console.log(chapter.title);
 						var seconds = Math.floor((chapter.startTime)/1000);
 						var timestamp = new Date(seconds * 1000).toISOString().substr(11, 8);
 						//$('#chaptersList').append(' ', $('<button>').addClass('chapterButtons').attr('timestamp', chapter.startTime).html(chapter.title).on('click', function(e) {_this.getPlayer().sendNotification("doSeek", Math.floor((chapter.startTime)/1000));}));
-						$('#chaptersList').append('<div class="chapterLink"><div class="chapterItem chapterTime"><span>' + timestamp + '</span></div><div class="chapterItem chapterTitle">' + chapter.title + '</div></div>').on('click', function(e) {_this.getPlayer().sendNotification("doSeek", seconds);});
+						$('#chaptersList').append('<div id="' + seconds + '" class="chapterLink"><div class="chapterItem chapterTime"><span>' + timestamp + '</span></div><div class="chapterItem chapterTitle">' + chapter.title + '</div></div>').on('click', function(e) {_this.getPlayer().sendNotification("doSeek", seconds);});
 					});					
 				}				
             });
