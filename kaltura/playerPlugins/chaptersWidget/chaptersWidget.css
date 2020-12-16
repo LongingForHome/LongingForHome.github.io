@@ -1,26 +1,32 @@
-
 .chaptersInterface {
+	/*height: 300px;*/
 	width: 100%;
     background-color: #eaeaea;
     font-family: Poppins, sans-serif;
+    
 }
 
 #chaptersContainer {
-	height: 300px;
+	
 	font-family: Poppins, sans-serif;
 	letter-spacing: 1px;
+	
 }
 
 .chaptersHeader {
+	height: 20px;
 	display: block;
     color: #242424;
     background: #e1e1e1;
     padding: 10px;
     font-size: 20px;
     font-weight: 700;
+    margin: auto;
+
 }
 
 .chaptersList {
+	/*height: 200px;*/
 	display: block;
 	overflow: auto;
 	font-size: 16px;

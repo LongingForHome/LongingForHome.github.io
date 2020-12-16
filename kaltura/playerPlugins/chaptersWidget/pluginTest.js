@@ -5,7 +5,7 @@ mw.kalturaPluginWrapper(function(){
 		defaultConfig: {
 			templatePath: 'https://longingforhome.github.io/kaltura/playerPlugins/chaptersWidget/chaptersWidget.tmpl.html',
             moduleWidth: '300',
-            moduleHeight: '200',
+            moduleHeight: '300',
             chaptersWidgetTargetId: 'chaptersWidget',
             containerPosition: 'bottom'
 		},
@@ -48,7 +48,8 @@ mw.kalturaPluginWrapper(function(){
 						var seconds = Math.floor((chapter.startTime)/1000);
 						var timestamp = new Date(seconds * 1000).toISOString().substr(11, 8);
 						//$('#chaptersList').append(' ', $('<button>').addClass('chapterButtons').attr('timestamp', chapter.startTime).html(chapter.title).on('click', function(e) {_this.getPlayer().sendNotification("doSeek", Math.floor((chapter.startTime)/1000));}));
-						$('#chaptersList').append('<div id="' + seconds + '" class="chapterLink"><div class="chapterItem chapterTime"><span>' + timestamp + '</span></div><div class="chapterItem chapterTitle">' + chapter.title + '</div></div>').on('click', function(e) {_this.getPlayer().sendNotification("doSeek", seconds);});
+						//$('#chaptersList').append('<div id="' + seconds + '" class="chapterLink"><div class="chapterItem chapterTime"><span>' + timestamp + '</span></div><div class="chapterItem chapterTitle">' + chapter.title + '</div></div>').on('click', function(e) {_this.getPlayer().sendNotification("doSeek", seconds);});
+						$('#chaptersList').append(' ', $('<div id="' + seconds + '" class="chapterLink"><div class="chapterItem chapterTime"><span>' + timestamp + '</span></div><div class="chapterItem chapterTitle">' + chapter.title + '</div></div>').on('click', function(e) {_this.getPlayer().sendNotification("doSeek", seconds);}));
 					});					
 				}				
             });
