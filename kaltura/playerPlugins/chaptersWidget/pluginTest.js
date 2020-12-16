@@ -58,7 +58,8 @@ mw.kalturaPluginWrapper(function(){
 					console.log("No chapters available.  Resetting player height to " + resetHeight);
 					$( ".mwPlayerContainer" ).css( "height", resetHeight );
 					// hack to force page redraw of the new element height
-					_this.getPlayer().sendNotification("closeFullScreen");
+					$( ".mwPlayerContainer" ).hide();
+					setTimeout(function(){$( ".mwPlayerContainer" ).show();}, 1000);
 				}				
             });
         },
