@@ -52,10 +52,13 @@ mw.kalturaPluginWrapper(function(){
 					});					
 				}
 				else {
+					//@todo: this reset below is not working properly
 					// remove the added height needed for the chapters widget
 					var resetHeight = $( ".mwPlayerContainer").height() - _this.getConfig( 'moduleHeight' );
 					console.log("No chapters available.  Resetting player height to " + resetHeight);
 					$( ".mwPlayerContainer" ).css( "height", resetHeight );
+					// hack to force page redraw of the new element height
+					$( ".mwPlayerContainer" ).hide().show();
 				}				
             });
         },
