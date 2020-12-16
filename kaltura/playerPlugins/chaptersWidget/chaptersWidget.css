@@ -1,48 +1,39 @@
 .chaptersInterface {
-	overflow: auto;
 	width: 100%;
-    background-color: #eaeaea;
-    font-family: Poppins, sans-serif;
-    
+    background-color: #FFFFFF;
+    font-family: Verdana, sans-serif;
+    overflow: auto;
+    letter-spacing: .5px;    
 }
 
-#chaptersContainer {
-	
-	font-family: Poppins, sans-serif;
-	letter-spacing: 1px;
-	
+#chaptersContainer {	
+	letter-spacing: .5px;	
 }
 
-.chaptersHeader {
-	
+.chaptersHeader {	
 	display: block;
     color: #242424;
-    background: #e1e1e1;
+    background: #E1E1E1;
     padding: 10px;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: bold;
     margin: auto;
-
 }
 
 .chaptersList {
-	
-	display: block;
 	overflow: auto;
-	font-size: 16px;
-	font-weight: 500;
+	font-size: 14px;
 }
 
 .chapterLink {
 	display: flex;
 	flex-flow: row wrap;
-	margin: 5px;
-	
+	margin: 5px;	
 }
 
-.chapterItem {
-	
+.chapterItem {	
 	padding: 10px;
+	font-weight: bolder;
 }
 
 .chapterTime {
@@ -55,5 +46,5 @@
 .chapterTitle {
 	flex: 1;
 	color: black;
-	background-color: #e1e1e1;
+	background-color: #F3F3F3;
 }
