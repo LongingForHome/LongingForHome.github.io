@@ -52,13 +52,13 @@ mw.kalturaPluginWrapper(function(){
 					});					
 				}
 				else {
-					//@todo: this reset below is not working properly
+					// NOTE: this is hacky. the parent frame is out of scope of this JS, so tyring to reposition the video so at least the proportions are correct
 					// remove the added height needed for the chapters widget
 					var resetHeight = $( ".mwPlayerContainer").height() - _this.getConfig( 'moduleHeight' );
 					console.log("No chapters available.  Resetting player height to " + resetHeight);
 					$( ".mwPlayerContainer" ).css( "height", resetHeight );
 					// hack to force page redraw of the new element height
-					$( ".mwPlayerContainer" ).hide();
+					$( ".mwPlayerContainer" ).hide().show();
 				}				
             });
         },
