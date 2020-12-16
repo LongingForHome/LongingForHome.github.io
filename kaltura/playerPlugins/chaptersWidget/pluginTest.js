@@ -39,9 +39,9 @@ mw.kalturaPluginWrapper(function(){
 				//console.log(JSON.stringify(data.objects));
 				// if there are no chapters, then don't load the container
 				if (data.totalCount > 0) {
-					console.log("adding chapters container...");
+					console.log("Found " + data.totalCount + " chapters to add to container.");
 		       		_this.getChaptersWidgetContainer();
-		       		console.log("adding chapters to widget...");
+		       		// loop through each chapter and build the list item
 					$.each(data.objects, function (index, chapter) {
 						//console.log(chapter.title);
 						var seconds = Math.floor((chapter.startTime)/1000);
@@ -53,6 +53,7 @@ mw.kalturaPluginWrapper(function(){
 				}
 				else {
 					// remove the added height needed for the chapters widget
+					console.log("No chapters available.  Resetting player height.");
 					$( ".kWidgetIframeContainer" ).css( "height",$( ".kWidgetIframeContainer").height() - this.getConfig( 'moduleHeight' ) );
 				}				
             });
