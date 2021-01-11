@@ -29,13 +29,14 @@ mw.kalturaPluginWrapper(function(){
                 'action' : 'get',
                 'entryId' : this.getPlayer().kentryid                		
             }, function( data ) {                
-				console.log(JSON.stringify(data));
+				//console.log(JSON.stringify(data));
 				// if there are no chapters, then don't load the container
 				if (data.externalSourceType == "YouTube") {
-					alert("It's a YouTube entry");
+					console.log("YouTube entry.  Force hiding Kaltura captions.");
+					this.sendNotification( 'hideClosedCaptions' );
 				}
 				else {
-					alert("It's not YouTube");
+					console.log("Kaltura entry.  ytCaptions abort.");
 				}				
             });
         }
