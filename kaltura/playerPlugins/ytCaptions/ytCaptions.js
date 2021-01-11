@@ -13,8 +13,8 @@ mw.kalturaPluginWrapper(function(){
 		        // do something additional on player ready
 		        _this.getBaseEntry();
 		    });
-		    this.bind( 'closedCaptionsHidden', function (){
-		    	console.log("captions hidden");
+		    this.bind( 'changedClosedCaptions', function () {
+		    	console.log("captions setting changed");
 		    });
 		    //console.log("player setup called...");  
 		    // try to get any chapters associated with the entry
