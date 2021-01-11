@@ -1,6 +1,6 @@
 // this is a simple player plugin that will check if an entry is a YouTube entry, and force hide any Kaltura captions as to prevent caption overlap scenarios.
 // the user is still able to manually choose CC for Kaltura captions if the YouTube stream is not injecting any captions
-//console.log("player external JS loaded...");
+//console.log("ytCaptions.js loaded...");
 mw.kalturaPluginWrapper(function(){
 
 	mw.PluginManager.add( 'ytCaptions', mw.KBaseComponent.extend({
@@ -9,7 +9,7 @@ mw.kalturaPluginWrapper(function(){
 		setup: function(){
 		       // The place to set any of your player bindings like:
 		      this.bind( 'playerReady', function(){
-		              // do something on player ready
+		              // do something additional on player ready
 		       });
 		       //console.log("player setup called...");  
 		       // try to get any chapters associated with the entry
@@ -30,12 +30,13 @@ mw.kalturaPluginWrapper(function(){
                 'entryId' : this.getPlayer().kentryid                		
             }, function( data ) {                
 				//console.log(JSON.stringify(data));
-				// if there are no chapters, then don't load the container
+				// check if the entry is a YouTube entry and override Kaltura captions if so
 				if (data.externalSourceType == "YouTube") {
 					console.log("YouTube entry.  Force hiding Kaltura captions.");
 					this.sendNotification( 'hideClosedCaptions' );
 				}
 				else {
+					// do nothing
 					console.log("Kaltura entry.  ytCaptions abort.");
 				}				
             });
