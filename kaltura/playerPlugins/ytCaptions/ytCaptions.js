@@ -7,13 +7,16 @@ mw.kalturaPluginWrapper(function(){
 		defaultConfig: {
 		},
 		setup: function(){
-		       // The place to set any of your player bindings like:
-		      this.bind( 'playerReady', function(){
-		              // do something additional on player ready
-		       });
-		       //console.log("player setup called...");  
-		       // try to get any chapters associated with the entry
-		       this.getBaseEntry();
+		    // The place to set any of your player bindings like:
+		    this.bind( 'playerReady', function(){
+		        // do something additional on player ready
+		    });
+		    this.bind( 'closedCaptionsHidden', function (){
+		    	console.log("captions hidden");
+		    });
+		    //console.log("player setup called...");  
+		    // try to get any chapters associated with the entry
+		    this.getBaseEntry();
 		},
 		getBaseEntry: function( callback ){
             //console.log("Getting entry info...");            
