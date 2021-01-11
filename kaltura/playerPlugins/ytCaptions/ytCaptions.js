@@ -33,6 +33,9 @@ mw.kalturaPluginWrapper(function(){
 				// if there are no chapters, then don't load the container
 				if (data.externalSourceType == "YouTube") {
 					alert("It's a YouTube entry");
+				}
+				else {
+					alert("It's not YouTube");
 				}				
             });
         }
