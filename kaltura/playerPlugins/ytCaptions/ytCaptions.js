@@ -38,7 +38,8 @@ mw.kalturaPluginWrapper(function(){
 				// check if the entry is a YouTube entry and override Kaltura captions if so
 				if (data.externalSourceType == "YouTube") {
 					console.log("YouTube entry.  Force hiding Kaltura captions.");
-					_this.getPlayer().sendNotification( 'hideClosedCaptions' );
+					_this.getPlayer().triggerHelper("selectClosedCaptions", "Off");
+					_this.getPlayer().triggerHelper('changedClosedCaptions', {language: ""});
 				}
 				else {
 					// do nothing
