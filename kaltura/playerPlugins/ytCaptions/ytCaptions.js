@@ -27,7 +27,7 @@ mw.kalturaPluginWrapper(function(){
             this.getKalturaClient().doRequest( {
                 'service' : 'baseEntry',
                 'action' : 'get',
-                'id' : this.getPlayer().kentryid                		
+                'entryId' : this.getPlayer().kentryid                		
             }, function( data ) {                
 				console.log(JSON.stringify(data));
 				// if there are no chapters, then don't load the container
