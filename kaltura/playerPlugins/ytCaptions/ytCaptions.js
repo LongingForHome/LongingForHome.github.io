@@ -20,15 +20,15 @@ mw.kalturaPluginWrapper(function(){
 		    });
 		    this.bind( 'userInitiatedPlay', function () {
 		    	console.log("userInitiatedPlay event triggered");
-		    	console.log("firstPlay is " + this.getConfig('firstPlay'));
-		    	console.log("youTube status is " + this.getConfig('youTubeEntry'));
-		    	if ((this.getConfig('firstPlay') == true) && (this.getConfig('youTubeEntry') == true)){
+		    	console.log("firstPlay is " + _this.getConfig('firstPlay'));
+		    	console.log("youTube status is " + _this.getConfig('youTubeEntry'));
+		    	if ((_this.getConfig('firstPlay') == true) && (_this.getConfig('youTubeEntry') == true)){
 		    		console.log("First play of YouTube entry.  Force hiding Kaltura captions.");
 		    		// Set the captions to off
-		    		this.getPlayer().triggerHelper("selectClosedCaptions", "Off");
-					this.getPlayer().triggerHelper('changedClosedCaptions', {language: ""});
+		    		_this.getPlayer().triggerHelper("selectClosedCaptions", "Off");
+					_this.getPlayer().triggerHelper('changedClosedCaptions', {language: ""});
 					// and change config so that a user caption selection will not be reverted for future play events
-					this.setConfig('firstPlay', false);
+					_this.setConfig('firstPlay', false);
 		    	}
 		    });
 		    //console.log("player setup called...");
