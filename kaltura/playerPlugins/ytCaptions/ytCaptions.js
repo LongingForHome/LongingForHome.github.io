@@ -28,9 +28,7 @@ mw.kalturaPluginWrapper(function(){
 					this.setConfig('firstPlay', false);
 		    	}
 		    });
-		    //console.log("player setup called...");  
-		    // try to get any chapters associated with the entry
-		    //this.getBaseEntry();
+		    //console.log("player setup called...");
 		},
 		getBaseEntry: function( callback ){
             //console.log("Getting entry info...");            
