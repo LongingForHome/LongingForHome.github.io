@@ -20,7 +20,7 @@ mw.kalturaPluginWrapper(function(){
 		    });
 		    this.bind( 'userInitiatedPlay', function () {
 		    	console.log("userInitiatedPlay event triggered");
-		    	if (this.getConfig('firstPlay') == true && this.getConfig('youTubeEntry') == true){
+		    	if ((this.getConfig('firstPlay') == true) && (this.getConfig('youTubeEntry') == true)){
 		    		console.log("First play of YouTube entry.  Force hiding Kaltura captions.");
 		    		// Set the captions to off
 		    		this.getPlayer().triggerHelper("selectClosedCaptions", "Off");
