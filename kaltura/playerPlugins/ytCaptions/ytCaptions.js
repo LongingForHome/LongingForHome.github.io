@@ -5,6 +5,8 @@ mw.kalturaPluginWrapper(function(){
 
 	mw.PluginManager.add( 'ytCaptions', mw.KBaseComponent.extend({
 		defaultConfig: {
+			firstPlay: true,
+			youTubeEntry: true
 		},
 		setup: function(){
 			var _this = this;
@@ -15,6 +17,16 @@ mw.kalturaPluginWrapper(function(){
 		    });
 		    this.bind( 'changedClosedCaptions', function () {
 		    	console.log("captions setting changed");
+		    });
+		    this.bind( 'playerPlayed', function () {
+		    	if (this.getConfig('firstPlay') == true && this.getConfig('youTubeEntry') == true){
+		    		console.log("First play of YouTube entry.  Force hiding Kaltura captions.");
+		    		// Set the captions to off
+		    		this.getPlayer().triggerHelper("selectClosedCaptions", "Off");
+					this.getPlayer().triggerHelper('changedClosedCaptions', {language: ""});
+					// and change config so that a user caption selection will not be reverted for future play events
+					this.setConfig('firstPlay', false);
+		    	}
 		    });
 		    //console.log("player setup called...");  
 		    // try to get any chapters associated with the entry
@@ -37,12 +49,11 @@ mw.kalturaPluginWrapper(function(){
 				//console.log(JSON.stringify(data));
 				// check if the entry is a YouTube entry and override Kaltura captions if so
 				if (data.externalSourceType == "YouTube") {
-					console.log("YouTube entry.  Force hiding Kaltura captions.");
-					_this.getPlayer().closedCaptions.selectOff();
-					//_this.getPlayer().triggerHelper("selectClosedCaptions", "Off");
-					//_this.getPlayer().triggerHelper('changedClosedCaptions', {language: ""});
+					console.log("YouTube entry.  Setting config.");
+					_this.setConfig('youTubeEntry', true);
 				}
 				else {
+					_this.setConfig('youTubeEntry', false);
 					// do nothing
 					console.log("Kaltura entry.  ytCaptions abort.");
 				}				
