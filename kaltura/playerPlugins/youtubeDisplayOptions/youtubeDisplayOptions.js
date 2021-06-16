@@ -50,7 +50,7 @@ mw.kalturaPluginWrapper(function(){
 		    });
 		    this.bind( 'playerPaused', function () {
 		    	console.log("user paused playback");
-		    }	
+		    });	
 		},
 		getBaseEntry: function( callback ){
             //console.log("Getting entry info...");            
