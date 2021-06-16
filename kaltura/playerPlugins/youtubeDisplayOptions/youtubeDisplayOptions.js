@@ -19,16 +19,16 @@ mw.kalturaPluginWrapper(function(){
 		    this.bind( 'userInitiatedPlay', function () {
 		    	console.log("userInitiatedPlay event triggered");
 		    	console.log("youTube status is " + _this.getConfig('youTubeEntry'));
-		    	if ((_this.getConfig('youTubeEntry') == true) {
+		    	if (_this.getConfig('youTubeEntry') == true) {
 		    		if ((_this.getConfig('showCaptions') == false) {
 			    		// remove the ytp-caption-window-container class
 			    		$( ".ytp-caption-window-container" ).remove();
 			    	}
-			    	if ((_this.getConfig('showRelatedVideos') == false) {
+			    	if (_this.getConfig('showRelatedVideos') == false) {
 			    		// remove the ytp-pause-overlay class
 			    		$( ".ytp-pause-overlay" ).remove();
 			    	}
-			    	if ((_this.getConfig('showAddedInfo') == false) {
+			    	if (_this.getConfig('showAddedInfo') == false) {
 			    		// remove the ytp-chrome-top-buttons class
 			    		$( ".ytp-chrome-top-buttons" ).remove();
 			    	}
