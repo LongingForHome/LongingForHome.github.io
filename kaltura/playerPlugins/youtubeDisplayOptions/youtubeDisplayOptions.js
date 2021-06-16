@@ -22,16 +22,25 @@ mw.kalturaPluginWrapper(function(){
 		    	if (_this.getConfig('youTubeEntry') == true) {
 		    		if (_this.getConfig('showCaptions') == false) {
 			    		// remove the ytp-caption-window-container class
+			    		if ($( ".ytp-caption-window-container" ).length) {
+			    			console.log(" found captions window");
+			    		}
 			    		console.log("removing class .ytp-caption-window-container");
 			    		$( ".ytp-caption-window-container" ).remove();
 			    	}
 			    	if (_this.getConfig('showRelatedVideos') == false) {
 			    		// remove the ytp-pause-overlay class
+			    		if ($( ".ytp-pause-overlay" ).length) {
+			    			console.log(" found related vids window");
+			    		}
 			    		console.log("removing class .ytp-pause-overlay");
 			    		$( ".ytp-pause-overlay" ).remove();
 			    	}
 			    	if (_this.getConfig('showAddedInfo') == false) {
 			    		// remove the ytp-chrome-top-buttons class
+			    		if ($( ".ytp-chrome-top-buttons" ).length) {
+			    			console.log(" found info window");
+			    		}
 			    		console.log("removing class .ytp-chrome-top-buttons");
 			    		$( ".ytp-chrome-top-buttons" ).remove();
 			    	}
