@@ -1,5 +1,5 @@
 // this is a simple player plugin that will check if an entry is a YouTube entry, and force hide the Youtube captions and related videos overlays.
-//console.log("youtubeDisplayOptions.js loaded...");
+console.log("youtubeDisplayOptions.js loaded...");
 mw.kalturaPluginWrapper(function(){
 
 	mw.PluginManager.add( 'youtubeDisplayOptions', mw.KBaseComponent.extend({
