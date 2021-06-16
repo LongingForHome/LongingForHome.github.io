@@ -20,7 +20,7 @@ mw.kalturaPluginWrapper(function(){
 		    	console.log("userInitiatedPlay event triggered");
 		    	console.log("youTube status is " + _this.getConfig('youTubeEntry'));
 		    	if (_this.getConfig('youTubeEntry') == true) {
-		    		if ((_this.getConfig('showCaptions') == false) {
+		    		if (_this.getConfig('showCaptions') == false) {
 			    		// remove the ytp-caption-window-container class
 			    		$( ".ytp-caption-window-container" ).remove();
 			    	}
