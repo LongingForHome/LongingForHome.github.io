@@ -35,6 +35,7 @@ mw.kalturaPluginWrapper(function(){
             });
         },
         constructButton: function() {
+        	var _this = this;
         	// get the container to insert the button into
         	$ (" .topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"" + _this.getConfig('downloadLink') + "\"></button>");
         }
