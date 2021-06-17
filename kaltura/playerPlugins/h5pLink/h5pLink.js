@@ -37,7 +37,7 @@ mw.kalturaPluginWrapper(function(){
         constructButton: function() {
         	var _this = this;
         	// get the container to insert the button into
-        	console.log($ (" .topBarContainer"));
+        	$ (" .topBarContainer").each(function(){console.log(this)});
         	$ (" .topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"" + _this.getConfig('downloadLink') + "\"></button>");
         }
 	}));
