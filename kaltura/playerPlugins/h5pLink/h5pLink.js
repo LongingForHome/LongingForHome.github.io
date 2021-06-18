@@ -35,10 +35,11 @@ mw.kalturaPluginWrapper(function(){
             });
         },
         constructButton: function() {
+        	console.log("constructButton called");
         	var _this = this;
         	// get the container to insert the button into
-        	$ (" .topBarContainer").each(function(){console.log(this)});
-        	$ (" .topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"" + _this.getConfig('downloadLink') + "\"></button>");
+        	$ (".topBarContainer").each(function(){console.log(this)});
+        	$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"" + _this.getConfig('downloadLink') + "\"></button>");
         }
 	}));
 });
