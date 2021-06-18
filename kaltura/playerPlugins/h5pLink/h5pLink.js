@@ -30,7 +30,7 @@ mw.kalturaPluginWrapper(function(){
                 'action' : 'get',
                 'entryId' : this.getPlayer().kentryid                		
             }, function( data ) {                
-				alert("Use this link in H5P: " + data.downloadUrl);	
+				//alert("Use this link in H5P: " + data.downloadUrl);	
 				_this.setConfig('downloadLink', data.downloadUrl);			
             });
         },
@@ -38,6 +38,12 @@ mw.kalturaPluginWrapper(function(){
         	console.log("constructButton called");
         	var _this = this;
         	// get the container to insert the button into
+        	if ( $(".controlsContainer").length > 0 ){
+        		console.log("found controls container");
+        	}
+        	if ( $(".topBarContainer").length > 0 ){
+        		console.log("found top top bar container");
+        	}
         	$ (".topBarContainer").each(function(){console.log(this)});
         	$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"" + _this.getConfig('downloadLink') + "\"></button>");
         }
