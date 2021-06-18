@@ -38,13 +38,7 @@ mw.kalturaPluginWrapper(function(){
         	console.log("constructButton called");
         	var _this = this;
         	// get the container to insert the button into
-        	if ( $(".controlsContainer").length > 0 ){
-        		console.log("found controls container");
-        	}
-        	if ( $(".topBarContainer").length > 0 ){
-        		console.log("found top top bar container");
-        	}
-        	$ (".topBarContainer").each(function(){console.log(this)});
+        	console.log(_this.getConfig('downloadLink'));        	
         	$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"" + _this.getConfig('downloadLink') + "\"></button>");
         }
 	}));
