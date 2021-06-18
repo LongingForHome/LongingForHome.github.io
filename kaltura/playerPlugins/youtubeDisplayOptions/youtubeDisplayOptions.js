@@ -30,19 +30,19 @@ mw.kalturaPluginWrapper(function(){
 			    	}
 			    	if (_this.getConfig('showRelatedVideos') == false) {
 			    		// remove the ytp-pause-overlay class
-			    		if ($( "#movie_player > div.ytp-pause-overlay.ytp-scroll-min.ytp-scroll-max" ).length) {
+			    		if ($( ".ytp-pause-overlay" ).length) {
 			    			console.log(" found related vids window");
 			    		}
 			    		console.log("removing class .ytp-pause-overlay");
-			    		$( "#movie_player > div.ytp-pause-overlay.ytp-scroll-min.ytp-scroll-max" ).remove();
+			    		$( ".ytp-pause-overlay" ).remove();
 			    	}
 			    	if (_this.getConfig('showAddedInfo') == false) {
 			    		// remove the ytp-chrome-top-buttons class
-			    		if ($( "#movie_player > div.ytp-chrome-top.ytp-show-cards-title > div.ytp-chrome-top-buttons" ).length) {
+			    		if ($( ".ytp-chrome-top-buttons" ).length) {
 			    			console.log(" found info window");
 			    		}
 			    		console.log("removing class .ytp-chrome-top-buttons");
-			    		$( "#movie_player > div.ytp-chrome-top.ytp-show-cards-title > div.ytp-chrome-top-buttons" ).remove();
+			    		$( ".ytp-chrome-top-buttons" ).remove();
 			    	}
 		    	}
 		    	
