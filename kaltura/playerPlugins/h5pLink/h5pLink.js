@@ -13,8 +13,8 @@ mw.kalturaPluginWrapper(function(){
 		    this.bind( 'playerReady', function(){
 		        // do something additional on player ready
 		        _this.getBaseEntry();
+		        _this.constructButton();
 		    });	
-		    _this.constructButton();
 		},
 		getBaseEntry: function( callback ){
             //console.log("Getting entry info...");            
