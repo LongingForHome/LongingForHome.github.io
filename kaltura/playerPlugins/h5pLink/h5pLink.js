@@ -40,7 +40,7 @@ mw.kalturaPluginWrapper(function(){
         	// get the container to insert the button into
         	//console.log(_this.getConfig('downloadLink')); 
         	//$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>"); 
-        	$ (".topBarContainer").append(' ', $("<button class=\"btn pull-right\" ><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>").on('click', function(e) {alert("Use this link in H5P:\\n " + _this.getConfig('downloadLink'))}));     	
+        	$ (".topBarContainer").append(' ', $("<button class=\"btn pull-right\" ><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>").on('click', function(e) {alert("Use this link in H5P:\n " + _this.getConfig('downloadLink'))}));     	
         	//$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"" + _this.getConfig('downloadLink') + "\"></button>");
         	//$ (" .mwEmbedPLayer").append('', $("<div id=\"h5pModal\" class=\"h5pModal\"><div class=\"h5pModalContent\"><span class=\"closeModal\">&times;</span><p>Use the following link in your H5P project:</p><p>" + _this.getConfig('downloadLink') + "</p></div></div>"));
         }
