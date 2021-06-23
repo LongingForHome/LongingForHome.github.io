@@ -42,7 +42,7 @@ mw.kalturaPluginWrapper(function(){
         	//$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>"); 
         	$ (".topBarContainer").append(' ', $("<button class=\"btn pull-right\" ><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>").on('click', function(e) {alert("Use this link in H5P:\n " + _this.getConfig('downloadLink'))}));     	
         	//$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"" + _this.getConfig('downloadLink') + "\"></button>");
-        	$ (" .videoHolder").append('', $("<div id=\"h5pModal\" class=\"h5pModal\"><div class=\"h5pModalContent\"><span class=\"closeModal\">&times;</span><p>Use the following link in your H5P project:</p><p>" + _this.getConfig('downloadLink') + "</p></div></div>"));
+        	$ (" .videoHolder").append('', $("<div class=\"screen infoScreen semiTransparentBkg\" role=\"dialog\" aria-labelledby=\"dialogTitle\" style=\"display: block;\"><div class=\"screen-content\"><span class=\"icon-close\" aria-label=\"Close screen\" tabindex=\"0\" role=\"button\"></span><span class=\"tmpl\"><div class=\"infoScreenPanel\"><div class=\"title\" aria-label=\"Use this link in your H5P project:\" tabindex=\"0\"><p>Use this link in your H5P project:</p></div></div></span></div></div>"));
         }
 	}));
 });
