@@ -53,6 +53,7 @@ mw.kalturaPluginWrapper(function(){
         closeModal: function() {
         	$('#h5pModal').hide();
         	console.log("closeModal called");
+        	
         }
 	}));
 });
