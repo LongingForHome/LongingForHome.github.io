@@ -44,10 +44,11 @@ mw.kalturaPluginWrapper(function(){
         	//$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>"); 
         	$ (".topBarContainer").append(' ', $("<button class=\"btn pull-right\" ><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>").on('click', function(e) {$('#h5pModal').show();var copyLink = document.getElementById("h5pLink");copyLink.select(); document.execCommand("copy")}));     	
         	//$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"" + _this.getConfig('downloadLink') + "\"></button>");
-        	$ (" .videoHolder").append('', $("<div id=\"h5pModal\"class=\"screen infoScreen semiTransparentBkg\" role=\"dialog\" aria-labelledby=\"dialogTitle\" style=\"display: none;\"><div class=\"screen-content\"><span class=\"icon-close\" aria-label=\"Close screen\" tabindex=\"0\" role=\"button\" onclick=\"closeModal()\"></span><span class=\"tmpl\"><div class=\"infoScreenPanel\"><div class=\"title\" aria-label=\"Content link for H5P\" tabindex=\"0\"><p>Content link for H5P</p><textarea id=\"h5pLink\" readonly style=\"width: 100%; font-size: small\">" + _this.getConfig('downloadLink') + "</textarea><p>This link has been copied to your clipboard</p></div></div></span></div></div>"));
+        	$ (" .videoHolder").append('', $("<div id=\"h5pModal\"class=\"screen infoScreen semiTransparentBkg\" role=\"dialog\" aria-labelledby=\"dialogTitle\" style=\"display: none;\"><div class=\"screen-content\"><span class=\"icon-close\" aria-label=\"Close screen\" tabindex=\"0\" role=\"button\" onclick=\"closeModal()\"></span><span class=\"tmpl\"><div class=\"infoScreenPanel\"><div class=\"title\" aria-label=\"Content link for H5P\" tabindex=\"0\"><p>Content link for H5P</p><textarea id=\"h5pLink\" readonly style=\"width: 100%; font-size: small\">" + _this.getConfig('downloadLink') + "</textarea><p class=\"description\">This link has been copied to your clipboard</p></div></div></span></div></div>"));
         },
         closeModal: function() {
         	$('#h5pModal').hide();
+        	console.log("closeModal called");
         }
 	}));
 });
