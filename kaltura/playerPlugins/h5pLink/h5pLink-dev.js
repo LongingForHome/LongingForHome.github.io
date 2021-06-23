@@ -48,12 +48,10 @@ mw.kalturaPluginWrapper(function(){
         	$ (" .videoHolder").append('', $("<div id=\"h5pModal\"class=\"screen infoScreen semiTransparentBkg\" role=\"dialog\" aria-labelledby=\"dialogTitle\" style=\"display: none;\"><div class=\"screen-content\">"));
         	$ (" .videoHolder").append('', $("<span class=\"icon-close\" aria-label=\"Close screen\" tabindex=\"0\" role=\"button\">").on('click', function(f) {$('#h5pModal').hide();}));
         	$ (" .videoHolder").append('', $("</span><span class=\"tmpl\"><div class=\"infoScreenPanel\"><div class=\"title\" aria-label=\"Content link for H5P\" tabindex=\"0\"><p>Content link for H5P</p><textarea id=\"h5pLink\" readonly style=\"width: 100%; font-size: small\">" + _this.getConfig('downloadLink') + "</textarea><p class=\"description\">This link has been copied to your clipboard</p></div></div></span></div></div>"));
-        	}
         },
         closeModal: function() {
         	$('#h5pModal').hide();
         	console.log("closeModal called");
-        	
         }
 	}));
 });
