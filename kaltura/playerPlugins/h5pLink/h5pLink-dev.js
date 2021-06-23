@@ -13,7 +13,7 @@ mw.kalturaPluginWrapper(function(){
 		    this.bind( 'playerReady', function(){
 		        // do something additional on player ready
 		        _this.getBaseEntry();
-		        _this.constructButton();
+		        //_this.constructButton();
 		    });	
 		},
 		getBaseEntry: function( callback ){
@@ -31,7 +31,9 @@ mw.kalturaPluginWrapper(function(){
                 'entryId' : this.getPlayer().kentryid                		
             }, function( data ) {                
 				//alert("Use this link in H5P: " + data.downloadUrl);	
-				_this.setConfig('downloadLink', data.downloadUrl);			
+				_this.setConfig('downloadLink', data.downloadUrl);
+				// construct the button once we have the needed data
+				_this.constructButton();			
             });
         },
         constructButton: function() {
@@ -40,9 +42,13 @@ mw.kalturaPluginWrapper(function(){
         	// get the container to insert the button into
         	//console.log(_this.getConfig('downloadLink')); 
         	//$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>"); 
-        	$ (".topBarContainer").append(' ', $("<button class=\"btn pull-right\" ><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>").on('click', function(e) {alert("Use this link in H5P:\n " + _this.getConfig('downloadLink'))}));     	
+        	$ (".topBarContainer").append(' ', $("<button class=\"btn pull-right\" ><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>").on('click', function(e) {$('#h5pModal').show();}));     	
         	//$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"" + _this.getConfig('downloadLink') + "\"></button>");
-        	$ (" .videoHolder").append('', $("<div class=\"screen infoScreen semiTransparentBkg\" role=\"dialog\" aria-labelledby=\"dialogTitle\" style=\"display: block;\"><div class=\"screen-content\"><span class=\"icon-close\" aria-label=\"Close screen\" tabindex=\"0\" role=\"button\"></span><span class=\"tmpl\"><div class=\"infoScreenPanel\"><div class=\"title\" aria-label=\"Use this link in your H5P project:\" tabindex=\"0\"><p>Use this link in your H5P project:</p></div></div></span></div></div>"));
+        	$ (" .videoHolder").append('', $("<div id=\"h5pModal\"class=\"screen infoScreen semiTransparentBkg\" role=\"dialog\" aria-labelledby=\"dialogTitle\" style=\"display: none;\"><div class=\"screen-content\"><span class=\"icon-close\" aria-label=\"Close screen\" tabindex=\"0\" role=\"button\" onclick=\"closeModal()\"></span><span class=\"tmpl\"><div class=\"infoScreenPanel\"><div class=\"title\" aria-label=\"Use this link in your H5P project:\" tabindex=\"0\"><p>Use this link in your H5P project:</p></div></div></span></div></div>"));
+        },
+        closeModal: function() {
+        	$('#h5pModal').hide();
         }
 	}));
 });
+ 
