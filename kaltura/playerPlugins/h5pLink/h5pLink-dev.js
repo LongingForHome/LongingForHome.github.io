@@ -41,13 +41,13 @@ mw.kalturaPluginWrapper(function(){
         	var _this = this;
         	// get the container to insert the button into
         	//console.log(_this.getConfig('downloadLink')); 
-        	//$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>"); 
-        	$ (".topBarContainer").append(' ', $("<button class=\"btn pull-right\" data-order=\"100\"><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>").on('click', function(e) {$('#h5pModal').show();var copyLink = document.getElementById("h5pLink");copyLink.select(); document.execCommand("copy")}));     	
-        	//$ (".topBarContainer").append("<button class=\"btn pull-right\" ><img src=\"" + _this.getConfig('downloadLink') + "\"></button>");
-        	//$ (" .videoHolder").append('', $("<div id=\"h5pModal\"class=\"screen infoScreen semiTransparentBkg\" role=\"dialog\" aria-labelledby=\"dialogTitle\" style=\"display: none;\"><div class=\"screen-content\"><span class=\"icon-close\" aria-label=\"Close screen\" tabindex=\"0\" role=\"button\" onclick=\"closeModal()\"></span><span class=\"tmpl\"><div class=\"infoScreenPanel\"><div class=\"title\" aria-label=\"Content link for H5P\" tabindex=\"0\"><p>Content link for H5P</p><textarea id=\"h5pLink\" readonly style=\"width: 100%; font-size: small\">" + _this.getConfig('downloadLink') + "</textarea><p class=\"description\">This link has been copied to your clipboard</p></div></div></span></div></div>"));
+        	$ (".topBarContainer").append(' ', $("<button class=\"btn pull-right\" data-order=\"100\"><img src=\"https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png\"></button>").on('click', function(e) {$('#h5pModal').show();var copyLink = document.getElementById("h5pLink");copyLink.select(); document.execCommand("copy")}));
+        	// and build the h5p modal screen
         	$ (" .videoHolder").append('', $("<div id=\"h5pModal\"class=\"screen infoScreen semiTransparentBkg\" role=\"dialog\" aria-labelledby=\"dialogTitle\" style=\"display: none;\"><div id=\"h5pModalScreen\" class=\"screen-content\">"));
         	$ (" #h5pModalScreen").append('', $("<span id=\"h5pModalClose\" class=\"icon-close\" aria-label=\"Close screen\" tabindex=\"0\" role=\"button\">").on('click', function(f) {$('#h5pModal').hide();}));
-        	$ (" #h5pModalScreen").append('', $("</span><span class=\"tmpl\"><div class=\"infoScreenPanel\"><div class=\"title\" aria-label=\"Content link for H5P\" tabindex=\"0\"><p>Content link for H5P</p><textarea id=\"h5pLink\" readonly style=\"width: 90%; font-size: small;\">" + _this.getConfig('downloadLink') + "</textarea><p class=\"description\" style=\"font-size: medium;\">This link has been copied to your clipboard</p></div></div></span></div></div>"));
+        	$ (" #h5pModalScreen").append('', $("</span><span class=\"tmpl\"><div class=\"infoScreenPanel\"><div class=\"title\" aria-label=\"Content link for H5P\" tabindex=\"0\"><p>Content link for H5P</p><textarea id=\"h5pLink\" readonly style=\"width: 90%; font-size: small;\">" + _this.getConfig('downloadLink') + "</textarea><p class=\"description alert-info\" style=\"font-size: medium;\">This link has been copied to your clipboard</p></div></div></span></div></div>"));
+        	// make sure we create space for the button so it doesn't overflow
+        	$ (" .titleLabel").width($ (" .titleLabel").width() - 50);
         },
         closeModal: function() {
         	$('#h5pModal').hide();
