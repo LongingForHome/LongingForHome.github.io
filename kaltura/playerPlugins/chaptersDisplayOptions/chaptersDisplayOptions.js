@@ -1,4 +1,4 @@
-// this is a simple player plugin that will present a file download link for H5P insertion
+// this is a simple player plugin that will change how the chapters plugin is displayed
 console.log("chaptersDisplayOptions.js loaded...");
 mw.kalturaPluginWrapper(function(){
 
