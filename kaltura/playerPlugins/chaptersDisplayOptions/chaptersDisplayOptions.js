@@ -11,7 +11,7 @@ mw.kalturaPluginWrapper(function(){
 		    // The place to set any of your player bindings like:
 		    this.bind( 'playerReady', function(){
 		        // do something additional on player ready
-		        $ ("a.sideBarContainerReminderContainer").trigger('click');
+		        $ ("a.sideBarContainerReminderContainer").focus().trigger('click');
 		    });	
 		}
 	}));
