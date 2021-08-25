@@ -5,7 +5,8 @@ mw.kalturaPluginWrapper(function(){
 	mw.PluginManager.add( 'h5pLink', mw.KBaseComponent.extend({
 		defaultConfig: {
 			buttonIcon: "https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png",
-			downloadLink: ""
+			downloadLink: "",
+			flavorParamId: 0
 		},
 		setup: function(){
 			var _this = this;
@@ -25,13 +26,15 @@ mw.kalturaPluginWrapper(function(){
             }
             // use the Kaltura Client to get the entry information
             var _this = this;
+            var flavorParam = this.getConfig('flavorParamId');
             this.getKalturaClient().doRequest( {
                 'service' : 'baseEntry',
                 'action' : 'get',
                 'entryId' : this.getPlayer().kentryid                		
             }, function( data ) {                
 				//alert("Use this link in H5P: " + data.downloadUrl);	
-				_this.setConfig('downloadLink', data.downloadUrl);
+				var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + flavorParam;
+				_this.setConfig('downloadLink', dllink);
 				// construct the button once we have the needed data
 				_this.constructButton();			
             });
@@ -54,5 +57,4 @@ mw.kalturaPluginWrapper(function(){
         	console.log("closeModal called");
         }
 	}));
-});
- 
+}); 
