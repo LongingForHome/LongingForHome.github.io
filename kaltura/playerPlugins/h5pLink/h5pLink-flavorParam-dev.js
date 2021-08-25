@@ -6,7 +6,7 @@ mw.kalturaPluginWrapper(function(){
 		defaultConfig: {
 			buttonIcon: "https://longingforhome.github.io/kaltura/playerPlugins/h5pLink/h5p_logo.png",
 			downloadLink: "",
-			flavorparamID: 487091
+			flavorParamId: 0
 		},
 		setup: function(){
 			var _this = this;
@@ -26,7 +26,7 @@ mw.kalturaPluginWrapper(function(){
             }
             // use the Kaltura Client to get the entry information
             var _this = this;
-            var flavorParam = this.getConfig('flavorparamID');
+            var flavorParam = this.getConfig('flavorParamId');
             this.getKalturaClient().doRequest( {
                 'service' : 'baseEntry',
                 'action' : 'get',
