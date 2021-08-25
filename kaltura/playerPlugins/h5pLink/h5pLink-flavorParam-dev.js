@@ -34,7 +34,7 @@ mw.kalturaPluginWrapper(function(){
             }, function( data ) {                
 				//alert("Use this link in H5P: " + data.downloadUrl);	
 				var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + flavorParam;
-				_this.setConfig('downloadLink', data.downloadUrl);
+				_this.setConfig('downloadLink', dllink);
 				// construct the button once we have the needed data
 				_this.constructButton();			
             });
