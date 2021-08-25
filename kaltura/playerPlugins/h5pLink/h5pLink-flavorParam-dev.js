@@ -30,7 +30,7 @@ mw.kalturaPluginWrapper(function(){
                 'service' : 'baseEntry',
                 'action' : 'get',
                 'entryId' : this.getPlayer().kentryid                		
-            }, function( data , _this) {                
+            }, function( data ) {                
 				//alert("Use this link in H5P: " + data.downloadUrl);	
 				var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + _this.getConfig('flavorparamID');
 				_this.setConfig('downloadLink', data.downloadUrl);
