@@ -30,9 +30,9 @@ mw.kalturaPluginWrapper(function(){
                 'service' : 'baseEntry',
                 'action' : 'get',
                 'entryId' : this.getPlayer().kentryid                		
-            }, function( data ) {                
+            }, function( data , _this) {                
 				//alert("Use this link in H5P: " + data.downloadUrl);	
-				var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + this.getConfig('flavorparamID');
+				var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + _this.getConfig('flavorparamID');
 				_this.setConfig('downloadLink', data.downloadUrl);
 				// construct the button once we have the needed data
 				_this.constructButton();			
