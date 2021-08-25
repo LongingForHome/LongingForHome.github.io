@@ -26,13 +26,14 @@ mw.kalturaPluginWrapper(function(){
             }
             // use the Kaltura Client to get the entry information
             var _this = this;
+            var flavorParam = this.getConfig('flavorparamID');
             this.getKalturaClient().doRequest( {
                 'service' : 'baseEntry',
                 'action' : 'get',
                 'entryId' : this.getPlayer().kentryid                		
             }, function( data ) {                
 				//alert("Use this link in H5P: " + data.downloadUrl);	
-				var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + _this.getConfig('flavorparamID');
+				var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + flavorParam;
 				_this.setConfig('downloadLink', data.downloadUrl);
 				// construct the button once we have the needed data
 				_this.constructButton();			
