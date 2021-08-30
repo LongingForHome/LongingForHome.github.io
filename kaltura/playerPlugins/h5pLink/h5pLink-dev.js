@@ -28,7 +28,7 @@ mw.kalturaPluginWrapper(function(){
             var _this = this;
             var flavorParam = this.getConfig('flavorParamId');
             this.getKalturaClient().doRequest( {
-                'service' : 'flavor_flavorasset',
+                'service' : 'flavorasset',
                 'action' : 'list',
                 'filter:entryIdEqual' : this.getPlayer().kentryid           		
             }, function( data ) { 
