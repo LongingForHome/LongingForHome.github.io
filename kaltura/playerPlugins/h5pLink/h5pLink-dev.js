@@ -28,15 +28,19 @@ mw.kalturaPluginWrapper(function(){
             var _this = this;
             var flavorParam = this.getConfig('flavorParamId');
             this.getKalturaClient().doRequest( {
-                'service' : 'baseEntry',
-                'action' : 'get',
-                'entryId' : this.getPlayer().kentryid                		
-            }, function( data ) {                
+                'service' : 'flavorAsset',
+                'action' : 'list',
+                'filter' : {
+                	'entryIdEqual' : this.getPlayer().kentryid
+                }               		
+            }, function( data ) { 
+            	console.log("Flavor listing...");
+            	console.log(JSON.stringify(data)) ;              
 				//alert("Use this link in H5P: " + data.downloadUrl);	
-				var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + flavorParam;
-				_this.setConfig('downloadLink', dllink);
+				//var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + flavorParam;
+				//_this.setConfig('downloadLink', dllink);
 				// construct the button once we have the needed data
-				_this.constructButton();			
+				//_this.constructButton();			
             });
         },
         constructButton: function() {
