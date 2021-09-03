@@ -33,12 +33,17 @@ mw.kalturaPluginWrapper(function(){
                 'entryId' : this.getPlayer().kentryid                		
             }, function( data ) {                
 				// get the base download url	
-				dlUrl = data.downloadUrl;
-				console.log("base download url = " + dlUrl);			
-            });
-            // now check to see which flavor we should be using
+				_this.setConfig('downloadLink', data.downloadUrl);
+				console.log("base download url = " + _this.getConfig('downloadLink'));
+				// call the buildLink function
+				_this.buildLink();			
+            });           
+        },
+        buildLink: function () {
+        	var _this = this;
+        	// now check to see which flavor we should be using
             var flavorParam = this.getConfig('flavorParamId');
-            var dllink = "";
+            var dllink = this.getConfig('downloadLink');
             // conditional check to see how we should get the desired flavor
             if ( flavorParam == "best") {
             	// get a list of the available flavors
@@ -60,16 +65,16 @@ mw.kalturaPluginWrapper(function(){
 	            		}
 	            	}); 
 	            	// now build the download link
-	            	dllink = dlUrl.substring(0,dlUrl.length -1) + flavorAssetParamsId;	            	
+	            	dllink = dllink.substring(0,dllink.length -1) + flavorAssetParamsId;	            	
 	            });
             } else {
-            	dllink = dlUrl.substring(0,dlUrl.length -1) + flavorParam;
+            	dllink = dllink.substring(0,dllink.length -1) + flavorParam;
             }
             console.log("determined download url is " + dllink);
             // set the link as a var in defaultConfig
             _this.setConfig('downloadLink', dllink);
             // construct the button once we have the needed data
-			_this.constructButton();            
+			_this.constructButton(); 
         },
         // function to use the appropriate flavor link that we retrieved and create an H5P button to expose that link 
         constructButton: function() {
