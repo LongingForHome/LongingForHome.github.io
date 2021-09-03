@@ -33,7 +33,8 @@ mw.kalturaPluginWrapper(function(){
                 'entryId' : this.getPlayer().kentryid                		
             }, function( data ) {                
 				// get the base download url	
-				dlUrl = data.downloadUrl;			
+				dlUrl = data.downloadUrl;
+				console.log("base download url = " + dlUrl);			
             });
             // now check to see which flavor we should be using
             var flavorParam = this.getConfig('flavorParamId');
