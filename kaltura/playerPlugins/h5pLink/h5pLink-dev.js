@@ -52,8 +52,8 @@ mw.kalturaPluginWrapper(function(){
 	                'action' : 'list',
 	                'filter:entryIdEqual' : this.getPlayer().kentryid           		
 	            }, function( data ) {
-	            	console.log("Entry flavor listing...");
-	            	console.log(JSON.stringify(data)) ;
+	            	console.log("retrieved entry flavors...");
+	            	//console.log(JSON.stringify(data)) ;
 	            	// create vars to hold values for comparison 
 	            	var flavorAssetParamsId = 0; //use initial value of 0 because source files are 0
 	            	var flavorRes = 0;
@@ -65,14 +65,15 @@ mw.kalturaPluginWrapper(function(){
 	            		}
 	            	}); 
 	            	// now build the download link
+	            	console.log("determined download url is " + dllink);
 	            	dllink = dllink.substring(0,dllink.length -1) + flavorAssetParamsId;	            	
 	            });
             } else {
+            	console.log("determined download url is " + dllink);
             	dllink = dllink.substring(0,dllink.length -1) + flavorParam;
             }
-            console.log("determined download url is " + dllink);
             // set the link as a var in defaultConfig
-            _this.setConfig('downloadLink', dllink);
+            this.setConfig('downloadLink', dllink);
             // construct the button once we have the needed data
 			_this.constructButton(); 
         },
