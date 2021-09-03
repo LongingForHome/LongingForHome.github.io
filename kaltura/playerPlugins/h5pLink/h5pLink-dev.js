@@ -46,6 +46,7 @@ mw.kalturaPluginWrapper(function(){
             var dllink = this.getConfig('downloadLink');
             // conditional check to see how we should get the desired flavor
             if ( flavorParam == "best") {
+            	console.log("looking for best flavor based on config");
             	// get a list of the available flavors
             	this.getKalturaClient().doRequest( {
 	                'service' : 'flavorasset',
@@ -69,6 +70,7 @@ mw.kalturaPluginWrapper(function(){
 	            	dllink = dllink.substring(0,dllink.length -1) + flavorAssetParamsId;	            	
 	            });
             } else {
+            	console.log("using config-defined flavor");
             	console.log("determined download url is " + dllink);
             	dllink = dllink.substring(0,dllink.length -1) + flavorParam;
             }
