@@ -24,8 +24,18 @@ mw.kalturaPluginWrapper(function(){
                 callback([]);
                 return;            
             }
-            // use the Kaltura Client to get the entry information
+            // use the Kaltura Client to get the entry information            
             var _this = this;
+            var dlUrl = "";
+            this.getKalturaClient().doRequest( {
+                'service' : 'baseEntry',
+                'action' : 'get',
+                'entryId' : this.getPlayer().kentryid                		
+            }, function( data ) {                
+				// get the base download url	
+				var dlUrl = data.downloadUrl;			
+            });
+            // now check to see which flavor we should be using
             var flavorParam = this.getConfig('flavorParamId');
             // conditional check to see how we should get the desired flavor
             if ( flavorParam == "best") {
@@ -47,10 +57,10 @@ mw.kalturaPluginWrapper(function(){
 	            		}
 	            	}); 
 	            	// now build the download link
-	            	var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + flavorAssetParamsId;	            	
+	            	var dllink = dlUrl.substring(0,data.downloadUrl.length -1) + flavorAssetParamsId;	            	
 	            });
             } else {
-            	var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + flavorParam;
+            	var dllink = dlUrl.substring(0,data.downloadUrl.length -1) + flavorParam;
             }
             // set the link as a var in defaultConfig
             _this.setConfig('downloadLink', dllink);
