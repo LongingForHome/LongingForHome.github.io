@@ -27,20 +27,37 @@ mw.kalturaPluginWrapper(function(){
             // use the Kaltura Client to get the entry information
             var _this = this;
             var flavorParam = this.getConfig('flavorParamId');
-            this.getKalturaClient().doRequest( {
-                'service' : 'flavorasset',
-                'action' : 'list',
-                'filter:entryIdEqual' : this.getPlayer().kentryid           		
-            }, function( data ) { 
-            	console.log("Flavor listing...");
-            	console.log(JSON.stringify(data)) ;              
-				//alert("Use this link in H5P: " + data.downloadUrl);	
-				//var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + flavorParam;
-				//_this.setConfig('downloadLink', dllink);
-				// construct the button once we have the needed data
-				//_this.constructButton();			
-            });
+            // conditional check to see how we should get the desired flavor
+            if ( flavorParam == "best") {
+            	// get a list of the available flavors
+            	this.getKalturaClient().doRequest( {
+	                'service' : 'flavorasset',
+	                'action' : 'list',
+	                'filter:entryIdEqual' : this.getPlayer().kentryid           		
+	            }, function( data ) {
+	            	console.log("Entry flavor listing...");
+	            	console.log(JSON.stringify(data)) ;
+	            	// create vars to hold values for comparison 
+	            	var flavorAssetParamsId = 0; //use initial value of 0 because source files are 0
+	            	var flavorRes = 0;
+	            	// loop through all the flavors and find the highest web-playable flavor
+	            	data.objects.forEach( function (flavor) {
+	            		if (flavor.tags.includes("mbr") && flavor.height > flavorRes ) {  //for web playable flavors, a tag of "mbr" is present on the flavor
+	            			flavorAssetParamsId = flavor.flavorParamsId;
+	            		}
+	            	}); 
+	            	// now build the download link
+	            	var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + flavorAssetParamsId;	            	
+	            });
+            } else {
+            	var dllink = data.downloadUrl.substring(0,data.downloadUrl.length -1) + flavorParam;
+            }
+            // set the link as a var in defaultConfig
+            _this.setConfig('downloadLink', dllink);
+            // construct the button once we have the needed data
+			_this.constructButton();            
         },
+        // function to use the appropriate flavor link that we retrieved and create an H5P button to expose that link 
         constructButton: function() {
         	console.log("constructButton called");
         	var _this = this;
