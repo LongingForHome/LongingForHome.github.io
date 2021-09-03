@@ -65,6 +65,7 @@ mw.kalturaPluginWrapper(function(){
             } else {
             	dllink = dlUrl.substring(0,dlUrl.length -1) + flavorParam;
             }
+            console.log("determined download url is " + dllink);
             // set the link as a var in defaultConfig
             _this.setConfig('downloadLink', dllink);
             // construct the button once we have the needed data
