@@ -67,17 +67,21 @@ mw.kalturaPluginWrapper(function(){
 	            	}); 
 	            	// now build the download link
 	            	console.log("determined download url is " + dllink);
-	            	dllink = dllink.substring(0,dllink.length -1) + flavorAssetParamsId;	            	
+	            	dllink = dllink.substring(0,dllink.length -1) + flavorAssetParamsId;
+	            	// set the link as a var in defaultConfig
+		            this.setConfig('downloadLink', dllink);
+		            // construct the button once we have the needed data
+					_this.constructButton();	            	
 	            });
             } else {
             	console.log("using config-defined flavor");
             	console.log("determined download url is " + dllink);
             	dllink = dllink.substring(0,dllink.length -1) + flavorParam;
-            }
-            // set the link as a var in defaultConfig
-            this.setConfig('downloadLink', dllink);
-            // construct the button once we have the needed data
-			_this.constructButton(); 
+            	// set the link as a var in defaultConfig
+	            this.setConfig('downloadLink', dllink);
+	            // construct the button once we have the needed data
+				_this.constructButton();
+	        }
         },
         // function to use the appropriate flavor link that we retrieved and create an H5P button to expose that link 
         constructButton: function() {
