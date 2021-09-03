@@ -57,10 +57,10 @@ mw.kalturaPluginWrapper(function(){
 	            		}
 	            	}); 
 	            	// now build the download link
-	            	var dllink = dlUrl.substring(0,data.downloadUrl.length -1) + flavorAssetParamsId;	            	
+	            	var dllink = dlUrl.substring(0,dlUrl.length -1) + flavorAssetParamsId;	            	
 	            });
             } else {
-            	var dllink = dlUrl.substring(0,data.downloadUrl.length -1) + flavorParam;
+            	var dllink = dlUrl.substring(0,dlUrl.length -1) + flavorParam;
             }
             // set the link as a var in defaultConfig
             _this.setConfig('downloadLink', dllink);
