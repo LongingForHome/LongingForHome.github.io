@@ -33,10 +33,11 @@ mw.kalturaPluginWrapper(function(){
                 'entryId' : this.getPlayer().kentryid                		
             }, function( data ) {                
 				// get the base download url	
-				var dlUrl = data.downloadUrl;			
+				dlUrl = data.downloadUrl;			
             });
             // now check to see which flavor we should be using
             var flavorParam = this.getConfig('flavorParamId');
+            var dllink = "";
             // conditional check to see how we should get the desired flavor
             if ( flavorParam == "best") {
             	// get a list of the available flavors
@@ -54,13 +55,14 @@ mw.kalturaPluginWrapper(function(){
 	            	data.objects.forEach( function (flavor) {
 	            		if (flavor.tags.includes("mbr") && flavor.height > flavorRes ) {  //for web playable flavors, a tag of "mbr" is present on the flavor
 	            			flavorAssetParamsId = flavor.flavorParamsId;
+	            			flavorRes = flavor.height;
 	            		}
 	            	}); 
 	            	// now build the download link
-	            	var dllink = dlUrl.substring(0,dlUrl.length -1) + flavorAssetParamsId;	            	
+	            	dllink = dlUrl.substring(0,dlUrl.length -1) + flavorAssetParamsId;	            	
 	            });
             } else {
-            	var dllink = dlUrl.substring(0,dlUrl.length -1) + flavorParam;
+            	dllink = dlUrl.substring(0,dlUrl.length -1) + flavorParam;
             }
             // set the link as a var in defaultConfig
             _this.setConfig('downloadLink', dllink);
