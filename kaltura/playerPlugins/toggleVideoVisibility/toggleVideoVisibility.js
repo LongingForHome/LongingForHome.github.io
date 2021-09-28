@@ -21,29 +21,8 @@ mw.kalturaPluginWrapper(function(){
             // get the initial visible icon url
             var visibleIcon = this.getConfig("visibleIcon"); 
             var hiddenIcon = this.getConfig("hiddenIcon");
-            // append the button to the div
-            //$ (".controlsContainer").append(' ', $("<button title=\"Toggle video\" class=\"btn pull-right display-high\" aria-label=\"Toggle video\" data-show-tooltip=\"true\" data-order=\"51\" data-plugin-name=\"toggleVideoVisibility\" tabindex=\"10\" style=\"text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8) !important\"><img id=\"toggleVisibleButtonImg\" src=\""+iconUrl+"\"\></button>").on('click', toggleVideoVisibility())); 
+            // append the button            
             $ (".controlsContainer").append(' ', $("<button title=\"Toggle video\" class=\"btn pull-right display-high\" aria-label=\"Toggle video\" data-show-tooltip=\"true\" data-order=\"51\" data-plugin-name=\"toggleVideoVisibility\" tabindex=\"10\" style=\"text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8) !important\"><img id=\"toggleVisibleButtonImg\" src=\""+iconUrl+"\"\></button>").on('click', function(e) {if($ ("#toggleVisibleButtonImg").attr("src")==visibleIcon){$ (".videoDisplay").hide();$ ("#toggleVisibleButtonImg").attr("src",hiddenIcon);}else{$ (".videoDisplay").show();$ ("#toggleVisibleButtonImg").attr("src",visibleIcon);}}));           
-        },
-        toggleVideoVisibility: function() {
-        	console.log("toggle requested...");
-        	if (this.getConfig("toggleStatus") == "visible") {
-        		console.log("video is visible.  hiding video...");
-        		// hide the video
-        		$ (".videoDisplay").hide();
-        		// set the icon to hidden
-        		$ ("#toggleVisibleButtonImg").attr("src",this.getConfig("hiddenIcon"));
-        		// change the status
-        		this.setConfig("toggleStatus", "hidden");
-        	}else {
-        		console.log("video is hidden.  showing video...");
-        		// show the video
-        		$ (".videoDisplay").show();
-        		//set the icon to visible
-        		$ ("#toggleVisibleButtonImg").attr("src",this.getConfig("visibleIcon"));
-        		// change the status
-        		this.setConfig("toggleStatus", "visible");
-        	}
         }
 	}));
 }); 
