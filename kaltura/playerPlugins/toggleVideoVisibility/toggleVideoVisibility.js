@@ -21,7 +21,8 @@ mw.kalturaPluginWrapper(function(){
             // get the initial visible icon url
             var iconUrl = this.getConfig("visibleIcon"); 
             // append the button to the div
-            $ (".controlBarContainer").append(' ', $("<button title=\"Toggle video\" class=\"btn pull-right display-high\" aria-label=\"Toggle video\" data-show-tooltip=\"true\" data-order=\"51\" data-plugin-name=\"toggleVideoVisibility\" tabindex=\"10\" style=\"text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8) !important\"><img id=\"toggleVisibleButtonImg\" src=\""+iconUrl+"\"\></button>").on('click', toggleVideoVisibility()));            
+            //$ (".controlBarContainer").append(' ', $("<button title=\"Toggle video\" class=\"btn pull-right display-high\" aria-label=\"Toggle video\" data-show-tooltip=\"true\" data-order=\"51\" data-plugin-name=\"toggleVideoVisibility\" tabindex=\"10\" style=\"text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8) !important\"><img id=\"toggleVisibleButtonImg\" src=\""+iconUrl+"\"\></button>").on('click', toggleVideoVisibility())); 
+            $ (".controlBarContainer").append(' ', $("<button title=\"Toggle video\" class=\"btn pull-right display-high\" aria-label=\"Toggle video\" data-show-tooltip=\"true\" data-order=\"51\" data-plugin-name=\"toggleVideoVisibility\" tabindex=\"10\" style=\"text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8) !important\"><img id=\"toggleVisibleButtonImg\" src=\""+iconUrl+"\"\></button>"));           
         },
         toggleVideoVisibility: function() {
         	console.log("toggle requested...");
