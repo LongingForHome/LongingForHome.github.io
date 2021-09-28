@@ -5,8 +5,7 @@ mw.kalturaPluginWrapper(function(){
 	mw.PluginManager.add( 'toggleVideoVisibility', mw.KBaseComponent.extend({
 		defaultConfig: {
 			visibleIcon: "https://longingforhome.github.io/kaltura/playerPlugins/toggleVideoVisibility/visible_white_30x30.png",
-			hiddenIcon: "https://longingforhome.github.io/kaltura/playerPlugins/toggleVideoVisibility/hidden_white_30x30.png",
-			toggleStatus: "visible"			
+			hiddenIcon: "https://longingforhome.github.io/kaltura/playerPlugins/toggleVideoVisibility/hidden_white_30x30.png"			
 		},
 		setup: function(){
 			var _this = this;
