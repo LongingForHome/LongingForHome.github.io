@@ -19,10 +19,11 @@ mw.kalturaPluginWrapper(function(){
 		constructToggle: function(){
             console.log("constructToggle called..."); 
             // get the initial visible icon url
-            var iconUrl = this.getConfig("visibleIcon"); 
+            var visibleIcon = this.getConfig("visibleIcon"); 
+            var hiddenIcon = this.getConfig("hiddenIcon");
             // append the button to the div
-            //$ (".controlBarContainer").append(' ', $("<button title=\"Toggle video\" class=\"btn pull-right display-high\" aria-label=\"Toggle video\" data-show-tooltip=\"true\" data-order=\"51\" data-plugin-name=\"toggleVideoVisibility\" tabindex=\"10\" style=\"text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8) !important\"><img id=\"toggleVisibleButtonImg\" src=\""+iconUrl+"\"\></button>").on('click', toggleVideoVisibility())); 
-            $ (".controlBarContainer").append(' ', $("<button title=\"Toggle video\" class=\"btn pull-right display-high\" aria-label=\"Toggle video\" data-show-tooltip=\"true\" data-order=\"51\" data-plugin-name=\"toggleVideoVisibility\" tabindex=\"10\" style=\"text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8) !important\"><img id=\"toggleVisibleButtonImg\" src=\""+iconUrl+"\"\></button>"));           
+            //$ (".controlsContainer").append(' ', $("<button title=\"Toggle video\" class=\"btn pull-right display-high\" aria-label=\"Toggle video\" data-show-tooltip=\"true\" data-order=\"51\" data-plugin-name=\"toggleVideoVisibility\" tabindex=\"10\" style=\"text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8) !important\"><img id=\"toggleVisibleButtonImg\" src=\""+iconUrl+"\"\></button>").on('click', toggleVideoVisibility())); 
+            $ (".controlsContainer").append(' ', $("<button title=\"Toggle video\" class=\"btn pull-right display-high\" aria-label=\"Toggle video\" data-show-tooltip=\"true\" data-order=\"51\" data-plugin-name=\"toggleVideoVisibility\" tabindex=\"10\" style=\"text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8) !important\"><img id=\"toggleVisibleButtonImg\" src=\""+iconUrl+"\"\></button>").on('click', function(e) {if($ ("#toggleVisibleButtonImg").attr("src")==visibleIcon){$ (".videoDisplay").hide();$ ("#toggleVisibleButtonImg").attr("src",hiddenIcon);}else{$ (".videoDisplay").show();$ ("#toggleVisibleButtonImg").attr("src",visibleIcon);}});           
         },
         toggleVideoVisibility: function() {
         	console.log("toggle requested...");
