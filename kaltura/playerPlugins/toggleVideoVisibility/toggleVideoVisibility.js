@@ -1,7 +1,7 @@
 // this is a simple player plugin that add a button to toggle the visibility of the video
 console.log("toggleVideoVisibility.js loaded...");
 mw.kalturaPluginWrapper(function(){
-
+	// register plugin with the plugin manager
 	mw.PluginManager.add( 'toggleVideoVisibility', mw.KBaseComponent.extend({
 		defaultConfig: {
 			visibleIcon: "https://longingforhome.github.io/kaltura/playerPlugins/toggleVideoVisibility/visible_white_30x30.png",
