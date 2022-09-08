@@ -1,7 +1,7 @@
 .transcript-menu-item.printWrapper {
-	display: none;
+	display: none !important;
 }
 
 .transcript-menu-item.downloadWrapper {
-	display: none;
+	display: none !important;
 }
