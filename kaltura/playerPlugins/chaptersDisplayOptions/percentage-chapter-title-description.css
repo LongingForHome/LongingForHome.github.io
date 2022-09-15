@@ -1,7 +1,7 @@
 .k-chapter-title {
-	font-size: 225%;
+	font-size: 225% !important;
 }
 
 .k-chapter-description {
-	font-size: 175%;
+	font-size: 175% !important;
 }
