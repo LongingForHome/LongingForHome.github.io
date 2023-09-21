@@ -1,0 +1,9 @@
+.playkit-spinner-container {
+    background-image: url("");
+}
+.playkit-spinner:nth-child(odd) {
+    background-color: #F56600;
+}
+.playkit-spinner:nth-child(even) {
+    background-color: #522D80;
+}
