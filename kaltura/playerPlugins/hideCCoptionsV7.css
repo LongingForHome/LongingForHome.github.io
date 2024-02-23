@@ -1,11 +1,3 @@
-.playkit-control-closed-captions {
-    	display: none !important;
-}
-
-.playkit-subtitles div {
-	display: none !important;
-}
-
-div:has(> #captions) {
+div.playkit-smart-container-item:has(> #captions), .playkit-subtitles div, .playkit-control-closed-captions {
 	display: none !important;
 }
