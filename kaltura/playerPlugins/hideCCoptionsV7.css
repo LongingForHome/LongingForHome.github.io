@@ -5,3 +5,7 @@
 .playkit-subtitles div {
 	display: none !important;
 }
+
+div:has(> #captions) {
+	display: none !important;
+}
