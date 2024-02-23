@@ -1,0 +1,3 @@
+.playkit-control-closed-captions, .playkit-subtitle, div:has(#captions) {
+    display: none !important;
+}
