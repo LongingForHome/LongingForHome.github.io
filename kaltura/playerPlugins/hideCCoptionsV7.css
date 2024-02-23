@@ -1,3 +1,7 @@
-.playkit-control-closed-captions, .playkit-subtitles {
-    display: none !important;
+.playkit-control-closed-captions {
+    	display: none !important;
+}
+
+.playkit-subtitles div {
+	display: none !important;
 }
