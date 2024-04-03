@@ -1,0 +1,3 @@
+.playkit-audio-entry-title, playkit-audio-entry-details, .playkit-audio-entry-backdrop {
+	display: none !important;
+}
