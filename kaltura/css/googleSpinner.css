@@ -1,0 +1,8 @@
+.playkit-spinner > * {
+    background-color: white !important; /* can change to whatever hex/rgb value you want for the color of the dots */
+}
+
+.playkit-spinner {
+    background-image: url(https://cfvod.kaltura.com/p/5954112/sp/595411200/raw/entry_id/1_9pgypr8h/version/100001);
+}    
+
