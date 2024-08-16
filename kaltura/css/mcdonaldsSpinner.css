@@ -1,9 +1,9 @@
 div.playkit-spinner > span:nth-child(even) {
-    background-color: #EA0000; /* will target the even spans, so 2,4,6,8 */
+    background-color: #EA0000 !important; /* will target the even spans, so 2,4,6,8 */
 }
 
 div.playkit-spinner > span:nth-child(odd) {
-    background-color: #FFC300; /* will target the odd spans, so 1,3,5,7 */
+    background-color: #FFC300 !important; /* will target the odd spans, so 1,3,5,7 */
 }
 
 div.playkit-spinner-container {

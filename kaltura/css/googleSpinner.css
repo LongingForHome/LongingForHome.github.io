@@ -1,5 +1,5 @@
 div.playkit-spinner > span {
-    background-color: white; /* can change to whatever hex/rgb value you want for the color of the dots */
+    background-color: white !important; /* can change to whatever hex/rgb value you want for the color of the dots */
 }
 
 div.playkit-spinner-container {
