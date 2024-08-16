@@ -1,0 +1,14 @@
+div.playkit-spinner > span:nth-child(even) {
+    background-color: #EA0000; /* will target the even spans, so 2,4,6,8 */
+}
+
+div.playkit-spinner > span:nth-child(odd) {
+    background-color: #FFC300; /* will target the odd spans, so 1,3,5,7 */
+}
+
+div.playkit-spinner-container {
+    background-image: url(https://cfvod.kaltura.com/p/5954112/sp/595411200/raw/entry_id/1_n3ixrm3t/version/100001); /* change this url to whatever hosted image you want to use.  in this example, image is 50x50 px */
+    background-repeat: no-repeat;
+    background-position: center;
+}    
+
