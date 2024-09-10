@@ -3,10 +3,10 @@ div.playkit-bottom-bar-area {
 }
 
 div.playkit-control-rewind {
-	display: none;
+	display: none !important;
 }
 
 div.playkit-control-forward {
-	display: none;
+	display: none !important;
 }
 
