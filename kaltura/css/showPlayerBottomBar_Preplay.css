@@ -1,5 +1,5 @@
 div.playkit-bottom-bar {
-    display: contents;
+    display: contents !important;
     position: relative;
     padding: 0 16px 4px;
     transition: 100ms opacity ease-in-out;
