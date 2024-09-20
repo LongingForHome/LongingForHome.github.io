@@ -1,0 +1,9 @@
+div.playkit-subtitles {
+	top: 0 !important;
+}
+
+div.playkit-bottom-bar {
+    position: relative !important;
+    opacity: 1 !important;
+    padding: 0 16px 4px !important;
+}
