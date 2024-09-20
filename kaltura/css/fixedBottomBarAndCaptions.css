@@ -1,5 +1,7 @@
 div.playkit-subtitles {
 	top: 0 !important;
+	transform: translateY(-50px) !important;
+	-webkit-transform: translateY(-50px) !important;
 }
 
 div.playkit-bottom-bar {
