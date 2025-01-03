@@ -190,7 +190,7 @@ function handleListEvent(event) {
         let startTime = new Date(event.startDate * 1000);
         let duration = (event.endDate - event.startDate) / 60;
         // add the event to the device Bookings
-        xapi.command('Bookings Book', {BookingRequestUUID: event.templateEntryId, Duration: duration, StartTime: startTime.toISOString(), Title: event.summary}).then(
+        xapi.command('Bookings Book', {BookingRequestUUID: event.templateEntryId + '--------------------------', Duration: duration, StartTime: startTime.toISOString(), Title: event.summary}).then(
           function (success) {
             // and add/update the Map
             upcomingEvents.set(event.templateEntryId, {State: 'inactive', Event: event});
@@ -217,9 +217,11 @@ function bookingHandler(event) {
     let eventId = '';
     if ('Start' in eventObj) {
       eventId = eventObj.Start.Id;
+      eventId = eventId.replace(/-/g,"");
       logger('Bookings Start event caught for id ' + eventId);
     } else if ('CheckedIn' in eventObj) {
       eventId = eventObj.CheckedIn.Id;
+      eventId = eventId.replace(/-/g,"");
       logger('Bookings CheckedIn event caught for id ' + eventId);
     } else {
       logger('somehow we missed Start or CheckedIn');
