@@ -53,9 +53,7 @@ function getMapItemByChildValue(map, childKey, childValue) {
 
 // GUID generator
 function generateGUID() {
-  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-  );
+  return xapi.command('HttpClient Get', { 'Header': 'Content-Type: application/json' , 'Url': 'https://www.uuidgenerator.net/api/guid', 'AllowInsecureHTTPS': 'False', 'ResultBody': 'PlainText'};
 }
 
 // function to get Webex device info
@@ -205,21 +203,28 @@ function handleListEvent(event) {
       function (error) {
         //handle error here
       }
+    );
   } else {
     let startTime = new Date(event.startDate * 1000);
     let duration = (event.endDate - event.startDate) / 60;
     // generate a GUID
-    let GUID = generateGUID();
-    // add the event to the device Bookings
-    xapi.command('Bookings Book', {BookingRequestUUID: GUID, Duration: duration, StartTime: startTime.toISOString(), Title: event.summary}).then(
+    let GUID = generateGUID().then(
       function (success) {
-        // and add/update the Map
-        upcomingEvents.set(event.templateEntryId, {State: 'inactive', GUID: GUID, Event: event});
+        // add the event to the device Bookings
+        xapi.command('Bookings Book', {BookingRequestUUID: GUID, Duration: duration, StartTime: startTime.toISOString(), Title: event.summary}).then(
+          function (success) {
+            // and add/update the Map
+            upcomingEvents.set(event.templateEntryId, {State: 'inactive', GUID: GUID, Event: event});
+          },
+          function (error) {
+            // handle the error
+            logger('failed to add booking');
+            logger(error);
+          }
+        );
       },
       function (error) {
-        // handle the error
-        logger('failed to add booking');
-        logger(error);
+        logger('failed to retrieve GUID');
       }
     );
   } 
@@ -364,4 +369,4 @@ main();
 
 1_4o7yic1a--------------------------
 
-xCommand Bookings Book BookingRequestUUID: "fcd1481c-050c-48ec-8258-b666d6e69af4" Duration: 5 StartTime: "2025-01-03T15:20:00Z" Title: "Test xAPI Booking"
+'fcd1481c-050c-48ec-8258-b666d6e69af4'
