@@ -41,6 +41,23 @@ let eventListParams = {
   }
 };
 
+// function to find Map entries by GUID
+function getMapItemByChildValue(map, childKey, childValue) {
+  for (const [key, value] of map.entries()) {
+    if (value[childKey] === childValue) {
+      return [key, value];
+    }
+  }
+  return ""; // Return empty string if no match is found
+}
+
+// GUID generator
+function generateGUID() {
+  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  );
+}
+
 // function to get Webex device info
 async function getDeviceInformation() {
   const resourceName = await xapi.status.get('SystemUnit BroadcastName').catch(e => {return ''});
@@ -174,36 +191,38 @@ function handleListEvent(event) {
   // event.startDate and event.endDate
   // event.templateEntryId
   // check if the event already has a booking entry
-  logger('checking for booking');
-  xapi.command('Bookings Get', {Id: event.templateEntryId}).then(
-    function (success) {
-      // Booking exists
-      logger('Booking exists');
-      logger(success);
-      //@TODO: should add some logic here to verify the event time hasn't changed
-    },
-    function (error) {
-      // if no response, then we need to add a booking
-      logger(error);
-      if (error.message == "Not found") {
-        // convert startTime and calculate duration
-        let startTime = new Date(event.startDate * 1000);
-        let duration = (event.endDate - event.startDate) / 60;
-        // add the event to the device Bookings
-        xapi.command('Bookings Book', {BookingRequestUUID: event.templateEntryId + '--------------------------', Duration: duration, StartTime: startTime.toISOString(), Title: event.summary}).then(
-          function (success) {
-            // and add/update the Map
-            upcomingEvents.set(event.templateEntryId, {State: 'inactive', Event: event});
-          },
-          function (error) {
-            // handle the error
-            logger('failed to add booking');
-            logger(error);
-          }
-        );        
+  // see if we know of a Booking GUID
+  let eventInfo = upcomingEvents.get(event.templateEntryId);
+  if (eventInfo !== undefined){
+    logger('checking for booking');
+    xapi.command('Bookings Get', {Id: eventInfo.GUID}).then(
+      function (success) {
+        // Booking exists
+        logger('Booking exists');
+        logger(success);
+        //@TODO: should add some logic here to verify the event time hasn't changed
+      },
+      function (error) {
+        //handle error here
       }
-    }
-  );  
+  } else {
+    let startTime = new Date(event.startDate * 1000);
+    let duration = (event.endDate - event.startDate) / 60;
+    // generate a GUID
+    let GUID = generateGUID();
+    // add the event to the device Bookings
+    xapi.command('Bookings Book', {BookingRequestUUID: GUID, Duration: duration, StartTime: startTime.toISOString(), Title: event.summary}).then(
+      function (success) {
+        // and add/update the Map
+        upcomingEvents.set(event.templateEntryId, {State: 'inactive', GUID: GUID, Event: event});
+      },
+      function (error) {
+        // handle the error
+        logger('failed to add booking');
+        logger(error);
+      }
+    );
+  } 
 }
 
 // function to handle Booking events triggered in the UI (can probably rewrite to handle this more elegantly with case statements)
@@ -217,11 +236,9 @@ function bookingHandler(event) {
     let eventId = '';
     if ('Start' in eventObj) {
       eventId = eventObj.Start.Id;
-      eventId = eventId.replace(/-/g,"");
       logger('Bookings Start event caught for id ' + eventId);
     } else if ('CheckedIn' in eventObj) {
       eventId = eventObj.CheckedIn.Id;
-      eventId = eventId.replace(/-/g,"");
       logger('Bookings CheckedIn event caught for id ' + eventId);
     } else {
       logger('somehow we missed Start or CheckedIn');
@@ -343,3 +360,8 @@ function main() {
 
 // start the process
 main();
+
+
+1_4o7yic1a--------------------------
+
+xCommand Bookings Book BookingRequestUUID: "fcd1481c-050c-48ec-8258-b666d6e69af4" Duration: 5 StartTime: "2025-01-03T15:20:00Z" Title: "Test xAPI Booking"
