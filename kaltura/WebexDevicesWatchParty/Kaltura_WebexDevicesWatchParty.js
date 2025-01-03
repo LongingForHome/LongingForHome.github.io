@@ -365,8 +365,3 @@ function main() {
 
 // start the process
 main();
-
-
-1_4o7yic1a--------------------------
-
-'fcd1481c-050c-48ec-8258-b666d6e69af4'
