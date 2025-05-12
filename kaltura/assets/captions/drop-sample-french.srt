@@ -1,0 +1,2471 @@
+1
+00:00:05,150 --> 00:00:07,090
+Bienvenue à tous à la session. Merci
+
+2
+00:00:07,090 --> 00:00:09,950
+Vous sortez tous. Excellent. On va
+
+3
+00:00:09,950 --> 00:00:11,890
+mets des écouteurs. J'adore avoir marché
+
+4
+00:00:11,890 --> 00:00:13,290
+ici et je viens de voir tout le monde avec
+
+5
+00:00:13,290 --> 00:00:15,210
+des écouteurs sur les oreilles. Je trouvais ça vraiment cool.
+
+6
+00:00:15,210 --> 00:00:16,850
+Et peut-être que tu veux être vraiment silencieux.
+
+7
+00:00:16,850 --> 00:00:18,430
+Donc si je parle trop fort, comme si j'augmentais
+
+8
+00:00:18,430 --> 00:00:19,930
+ta main et dis, mec, c'est trop
+
+9
+00:00:19,930 --> 00:00:22,050
+fort. On t'a sur la tête. C'est bon.
+
+10
+00:00:22,190 --> 00:00:24,170
+Je suis podcasteur. J'ai donc l'habitude de…
+
+11
+00:00:24,170 --> 00:00:25,290
+Je vais me lancer dans un podcast
+
+12
+00:00:25,290 --> 00:00:26,690
+mode et dire comme, vous savez, proche de
+
+13
+00:00:26,690 --> 00:00:28,150
+toi, tu as tes écouteurs.
+
+14
+00:00:28,410 --> 00:00:30,490
+Tout le monde est, vous savez, petit, si légèrement
+
+15
+00:00:30,490 --> 00:00:32,250
+plus intime. Je n'ai pas juste crié à
+
+16
+00:00:32,250 --> 00:00:34,490
+tout le monde à l'arrière ou entendre des commentaires
+
+17
+00:00:34,490 --> 00:00:36,270
+Du micro. Super. Tous les écouteurs
+
+18
+00:00:36,270 --> 00:00:39,710
+C'est fantastique. Bienvenue dans Salesforce
+
+19
+00:00:39,710 --> 00:00:43,210
+exécute des applications Slack à grande échelle avec Heroku. Je
+
+20
+00:00:43,210 --> 00:00:44,650
+Merci d'être venus à la séance.
+
+21
+00:00:44,790 --> 00:00:47,090
+Maintenant, une brève déclaration prospective.
+
+22
+00:00:47,090 --> 00:00:49,630
+Ce que je veux toujours dire ici, c'est de ne pas
+
+23
+00:00:49,630 --> 00:00:51,050
+prendre des décisions d'achat sur
+
+24
+00:00:51,050 --> 00:00:54,210
+produits qui ne sont pas actuellement en vente.
+
+25
+00:00:54,370 --> 00:00:56,290
+Point final. C'est tout.
+
+26
+00:00:57,180 --> 00:00:58,610
+Très bien. Alors, pourquoi sommes-nous ici ? Quoi ?
+
+27
+00:00:58,610 --> 00:01:01,070
+De quoi parlons-nous ? Maintenant que nous y sommes, je
+
+28
+00:01:01,070 --> 00:01:02,830
+se sentir comme, parce que deux choses viennent
+
+29
+00:01:02,830 --> 00:01:05,470
+ensemble. Quand on parle d'Heroku,
+
+30
+00:01:05,470 --> 00:01:06,710
+qui est une plateforme en tant que service,
+
+31
+00:01:06,790 --> 00:01:10,510
+code, parler de la productivité de Slack,
+
+32
+00:01:10,630 --> 00:01:13,230
+nous parlons de productivité à grande échelle.
+
+33
+00:01:13,390 --> 00:01:16,990
+Slack, outil massivement utilisé.
+
+34
+00:01:17,490 --> 00:01:19,650
+Heroku, quelque chose qui se trouve à l'arrière
+
+35
+00:01:19,650 --> 00:01:21,590
+où vous pouvez créer des applications à exécuter sur
+
+36
+00:01:21,590 --> 00:01:24,750
+échelle dans les entreprises qui permettent ensuite aux gens de
+
+37
+00:01:24,750 --> 00:01:27,370
+tirer davantage de valeur de cet outil de productivité.
+
+38
+00:01:27,430 --> 00:01:30,290
+Alors, pour commencer avant de commencer
+
+39
+00:01:30,290 --> 00:01:32,570
+dans tout ça et en quelque sorte entrer dans ce qui est quoi,
+
+40
+00:01:32,990 --> 00:01:34,550
+juste un rapide lever de main.
+
+41
+00:01:34,550 --> 00:01:36,470
+Qui utilise Slack au quotidien ?
+
+42
+00:01:36,630 --> 00:01:38,670
+Voyez, beaucoup de mains, beaucoup de mains. Je suis
+
+43
+00:01:38,670 --> 00:01:39,690
+Je vais vous faire utiliser Slack. Je vais
+
+44
+00:01:39,690 --> 00:01:40,910
+pour vous aider à utiliser Slack aussi. Vous êtes
+
+45
+00:01:40,910 --> 00:01:42,010
+je vais utiliser Slack d'ici la fin de la journée.
+
+46
+00:01:42,950 --> 00:01:45,810
+Et puis, quelqu'un a travaillé avec Heroku
+
+47
+00:01:45,870 --> 00:01:47,890
+avant ? Très bien. On a des
+
+48
+00:01:47,890 --> 00:01:49,230
+les personnes travaillant avec Heroku qui aident
+
+49
+00:01:49,230 --> 00:01:51,050
+nous sommes en quelque sorte à la bonne taille dans la conversation.
+
+50
+00:01:51,050 --> 00:01:52,570
+Parlez à certains d’entre vous.
+
+51
+00:01:52,710 --> 00:01:53,470
+Excellent.
+
+52
+00:01:53,470 --> 00:01:56,930
+Très bien, voici donc l’ordre du jour pour aujourd’hui.
+
+53
+00:01:57,310 --> 00:01:59,240
+Applications personnalisées fonctionnant chez Heroku
+
+54
+00:01:59,240 --> 00:02:01,330
+à grande échelle. C'est chez Salesforce.
+
+55
+00:02:01,330 --> 00:02:03,470
+C'est à travers 80 000 employés qui ont été
+
+56
+00:02:03,470 --> 00:02:05,110
+utiliser ces applications avec Heroku en cours d'exécution
+
+57
+00:02:05,110 --> 00:02:06,430
+les éléments à l'échelle dans le back-end.
+
+58
+00:02:06,430 --> 00:02:07,430
+Nous allons en chercher
+
+59
+00:02:07,430 --> 00:02:09,310
+principes d'architecture et de design.
+
+60
+00:02:09,490 --> 00:02:11,910
+Nous allons faire une démonstration, et
+
+61
+00:02:11,910 --> 00:02:13,050
+Ensuite, nous aurons une séance de questions-réponses.
+
+62
+00:02:13,190 --> 00:02:14,830
+Alors, entrons dans le vif du sujet.
+
+63
+00:02:14,870 --> 00:02:16,870
+Très bien, moi, moi-même, UD Importé
+
+64
+00:02:16,870 --> 00:02:18,750
+de Leon. Je suis à Heroku. Je suis dans
+
+65
+00:02:18,750 --> 00:02:20,330
+responsable de la défense des clients, obtention
+
+66
+00:02:20,330 --> 00:02:21,750
+là-dedans, en train de parler aux clients,
+
+67
+00:02:21,970 --> 00:02:23,150
+être là où les gens
+
+68
+00:02:23,150 --> 00:02:24,950
+sont, communauté, aiment la communauté.
+
+69
+00:02:24,950 --> 00:02:26,630
+C'est mon partenaire dans le crime,
+
+70
+00:02:26,710 --> 00:02:27,510
+Frais de transaction,
+
+71
+00:02:27,690 --> 00:02:29,350
+ingénieur logiciel principal
+
+72
+00:02:30,370 --> 00:02:31,790
+qui va te faire traverser
+
+73
+00:02:31,790 --> 00:02:32,610
+une grande partie de l'architecture et
+
+74
+00:02:32,610 --> 00:02:34,270
+les démos d'aujourd'hui aussi. Donc c'est le
+
+75
+00:02:34,270 --> 00:02:35,470
+mec pour les questions techniques.
+
+76
+00:02:35,590 --> 00:02:36,750
+Attrape aussi ce gars à la fin,
+
+77
+00:02:36,750 --> 00:02:37,970
+surtout si vous voulez creuser en profondeur.
+
+78
+00:02:38,710 --> 00:02:39,310
+D'accord.
+
+79
+00:02:39,310 --> 00:02:41,330
+Applications personnalisées en cours d'exécution,
+
+80
+00:02:41,750 --> 00:02:43,130
+fonctionnant avec Heroku
+
+81
+00:02:43,130 --> 00:02:44,830
+à grande échelle, chez Salesforce,
+
+82
+00:02:44,910 --> 00:02:46,150
+intégré à Slack.
+
+83
+00:02:46,790 --> 00:02:49,390
+Bien sûr, comme je l’ai dit, 80 000 employés
+
+84
+00:02:49,390 --> 00:02:52,490
+accéder à cette plateforme de communication
+
+85
+00:02:53,050 --> 00:02:54,910
+et l'outil de productivité
+
+86
+00:02:55,230 --> 00:02:56,950
+mise à l'échelle de plusieurs applications,
+
+87
+00:02:56,950 --> 00:02:58,770
+tirer parti de l'ensemble de la plateforme Heroku
+
+88
+00:02:58,770 --> 00:03:01,230
+comme un service pour ceux qui ne l'ont pas fait
+
+89
+00:03:01,230 --> 00:03:02,770
+Je connaissais déjà Heroku.
+
+90
+00:03:03,350 --> 00:03:05,550
+Heroku est un We Speak Your
+
+91
+00:03:05,550 --> 00:03:07,490
+Plateforme linguistique en tant que service.
+
+92
+00:03:09,570 --> 00:03:11,970
+Si vous créez des applications et que vous
+
+93
+00:03:11,970 --> 00:03:13,710
+je veux les construire avec Python,
+
+94
+00:03:13,710 --> 00:03:16,390
+avec Ruby, avec Go, avec divers
+
+95
+00:03:16,390 --> 00:03:18,690
+différents langages de programmation,
+
+96
+00:03:18,970 --> 00:03:21,430
+et vous voulez pouvoir vous connecter
+
+97
+00:03:21,430 --> 00:03:22,770
+et se connecter aux données qui se trouvent dans
+
+98
+00:03:22,770 --> 00:03:24,730
+votre écosystème Salesforce, vous voulez
+
+99
+00:03:24,730 --> 00:03:26,450
+pour pouvoir avoir des hooks dans Slack,
+
+100
+00:03:26,450 --> 00:03:29,730
+alimentez vos applications à grande échelle.
+
+101
+00:03:30,470 --> 00:03:31,770
+Heroku est la plateforme qui
+
+102
+00:03:31,770 --> 00:03:32,670
+vous pouvez utiliser cet effet de levier pour être
+
+103
+00:03:32,670 --> 00:03:33,810
+capable de faire toutes ces choses.
+
+104
+00:03:35,290 --> 00:03:36,530
+Gain de temps,
+
+105
+00:03:36,690 --> 00:03:39,870
+économiser de l'argent, atteindre les objectifs de l'entreprise et
+
+106
+00:03:39,870 --> 00:03:41,110
+initiatives. Ce sont les choses qui
+
+107
+00:03:41,110 --> 00:03:43,670
+Ces applications sont capables de faire. La puissance de
+
+108
+00:03:43,670 --> 00:03:46,070
+Heroku derrière Slack et la collaboration permettent
+
+109
+00:03:46,070 --> 00:03:47,750
+pour que vous puissiez réaliser ces choses.
+
+110
+00:03:47,750 --> 00:03:48,950
+Nous allons donc passer en revue certains des
+
+111
+00:03:48,950 --> 00:03:50,430
+ceux qui fonctionnent actuellement.
+
+112
+00:03:50,770 --> 00:03:51,890
+Centre de tâches.
+
+113
+00:03:51,930 --> 00:03:53,810
+L'une des meilleures choses aussi, quand vous êtes
+
+114
+00:03:53,810 --> 00:03:55,610
+l'intégration chez Salesforce, vous avez tout cela
+
+115
+00:03:55,610 --> 00:03:57,930
+tâches, toutes ces choses que vous devez faire.
+
+116
+00:03:58,670 --> 00:04:01,490
+Ils peuvent tous flotter vers un seul endroit. Vous avez
+
+117
+00:04:01,490 --> 00:04:03,250
+J'ai ce problème d'approvisionnement. Vous avez
+
+118
+00:04:03,250 --> 00:04:05,510
+cette formation que vous devez accomplir.
+
+119
+00:04:05,770 --> 00:04:08,750
+Sur 80 000 employés, tous regroupés
+
+120
+00:04:08,750 --> 00:04:12,190
+sur une plateforme évolutive dans le
+
+121
+00:04:12,190 --> 00:04:13,550
+l'endroit où tout se fait
+
+122
+00:04:13,550 --> 00:04:15,970
+sur Slack, où j'aime faire des choses.
+
+123
+00:04:16,030 --> 00:04:18,890
+Tout cela peut être fait en un seul endroit.
+
+124
+00:04:19,350 --> 00:04:21,290
+Et voici un exemple de 2 millions de dollars
+
+125
+00:04:21,290 --> 00:04:23,390
+dans les licences rendues. Maintenant, ces
+
+126
+00:04:23,390 --> 00:04:25,190
+les licences étaient destinées à d'autres produits,
+
+127
+00:04:25,190 --> 00:04:26,830
+d’autres outils utilisés pour faire ces choses.
+
+128
+00:04:26,990 --> 00:04:28,750
+Création d'une application fonctionnant sur 80
+
+129
+00:04:28,750 --> 00:04:31,130
+000 employés au sein de l'écosystème Slack
+
+130
+00:04:31,430 --> 00:04:34,030
+nous permet de les reprendre et ensuite
+
+131
+00:04:34,030 --> 00:04:36,170
+exploiter cette application en interne, l'exécuter
+
+132
+00:04:36,170 --> 00:04:38,330
+à grande échelle pour que tous les employés puissent l'utiliser.
+
+133
+00:04:39,690 --> 00:04:41,250
+Approbations. Oh, mon Dieu.
+
+134
+00:04:41,350 --> 00:04:44,470
+3 310 années sauvées. J'adore celle-là.
+
+135
+00:04:45,030 --> 00:04:46,510
+C'est beaucoup de temps.
+
+136
+00:04:46,690 --> 00:04:48,290
+Tourner un processus de deux jours
+
+137
+00:04:48,290 --> 00:04:50,550
+dans un processus de deux heures.
+
+138
+00:04:51,470 --> 00:04:53,170
+Heroku s'exécute à l'arrière pour faire
+
+139
+00:04:53,170 --> 00:04:55,050
+cette application s'étend à tous les employés.
+
+140
+00:04:57,250 --> 00:05:00,550
+En tant que concierge, problèmes informatiques, vous souhaitez
+
+141
+00:05:00,550 --> 00:05:01,870
+pour pouvoir faire des demandes de renseignements.
+
+142
+00:05:02,050 --> 00:05:04,670
+68 000 problèmes résolus sans intervention humaine
+
+143
+00:05:04,670 --> 00:05:06,310
+interaction. Maintenant, nous n'essayons pas d'obtenir
+
+144
+00:05:06,310 --> 00:05:08,330
+se débarrasser de tous les humains, mais il y a
+
+145
+00:05:08,330 --> 00:05:09,550
+beaucoup de travail que nous savons obtenir
+
+146
+00:05:09,550 --> 00:05:11,450
+retard que les humains aimeraient
+
+147
+00:05:11,450 --> 00:05:13,310
+faire cela passe par un processus automatisé
+
+148
+00:05:13,310 --> 00:05:16,690
+les processus peuvent désormais être réalisés plus efficacement
+
+149
+00:05:16,810 --> 00:05:18,130
+et les gens peuvent obtenir ce qu'ils veulent
+
+150
+00:05:18,130 --> 00:05:19,270
+vouloir et continuer leur journée.
+
+151
+00:05:19,910 --> 00:05:22,230
+Enfin, c'est un excellent exemple, Einstein.
+
+152
+00:05:22,230 --> 00:05:23,970
+Certains d’entre vous connaissent peut-être Einstein.
+
+153
+00:05:23,970 --> 00:05:26,990
+C'est notre application d'IA pour pouvoir
+
+154
+00:05:26,990 --> 00:05:28,250
+faire beaucoup de choses différentes.
+
+155
+00:05:28,250 --> 00:05:29,690
+Résumer les documents, demander
+
+156
+00:05:29,690 --> 00:05:31,370
+questions basées sur la base de connaissances.
+
+157
+00:05:31,510 --> 00:05:33,170
+C'est accessible via Slack
+
+158
+00:05:33,170 --> 00:05:35,770
+parmi tous les employés avec
+
+159
+00:05:35,770 --> 00:05:37,210
+Heroku court à l'arrière.
+
+160
+00:05:37,510 --> 00:05:39,690
+Au tout premier démarrage, vous voyez 12
+
+161
+00:05:39,690 --> 00:05:41,590
+000 utilisateurs déjà dès le premier mois,
+
+162
+00:05:41,590 --> 00:05:43,390
+120 000 requêtes,
+
+163
+00:05:43,650 --> 00:05:45,630
+2 000 réunions prévues,
+
+164
+00:05:45,630 --> 00:05:47,210
+toutes sortes de choses que vous pouvez faire
+
+165
+00:05:47,210 --> 00:05:49,130
+avec ce grand modèle d'apprentissage
+
+166
+00:05:49,490 --> 00:05:52,990
+via Slack à grande échelle avec Heroku sur le
+
+167
+00:05:52,990 --> 00:05:54,890
+back-end. Maintenant, je veux juste commencer
+
+168
+00:05:54,890 --> 00:05:56,480
+avec ces exemples pour que vous ayez un contexte.
+
+169
+00:05:57,450 --> 00:05:59,630
+Plusieurs applications en cours d'exécution
+
+170
+00:05:59,630 --> 00:06:01,810
+Slack, à travers 80 000 employés.
+
+171
+00:06:01,870 --> 00:06:03,310
+Maintenant, nous allons aller de l'avant et obtenir
+
+172
+00:06:03,310 --> 00:06:05,090
+dans le vif du sujet. Mais avant
+
+173
+00:06:05,090 --> 00:06:07,110
+nous entrons dans l'architecture et la démonstration,
+
+174
+00:06:08,230 --> 00:06:11,250
+qui crée déjà de grandes applications
+
+175
+00:06:11,250 --> 00:06:13,910
+avec Heroku à grande échelle ? Quelqu'un construit
+
+176
+00:06:13,910 --> 00:06:16,450
+sur plus de 5 000 m², d'accord, nous en avons un
+
+177
+00:06:16,450 --> 00:06:18,290
+une personne là-dedans, deux personnes là-dedans.
+
+178
+00:06:18,290 --> 00:06:19,770
+Quelqu'un d'autre où allons-nous vous emmener ?
+
+179
+00:06:19,770 --> 00:06:22,250
+créer des applications à grande échelle avec Heroku sur
+
+180
+00:06:22,250 --> 00:06:24,090
+D'accord ? D'ici la fin de la journée, on
+
+181
+00:06:24,090 --> 00:06:25,290
+faire un mini-hack. En fait, on n'y va pas
+
+182
+00:06:25,290 --> 00:06:26,430
+pour faire un mini-hack. On va juste faire
+
+183
+00:06:26,430 --> 00:06:28,010
+une discussion, mais vous pourrez nous rencontrer plus tard.
+
+184
+00:06:28,010 --> 00:06:29,290
+Nous sommes dans la zone du camping
+
+185
+00:06:29,290 --> 00:06:30,620
+si vous voulez nous parler davantage.
+
+186
+00:06:31,130 --> 00:06:33,470
+Slack et Heroku sont là. Très bien,
+
+187
+00:06:33,650 --> 00:06:34,830
+quelqu'un crée des applications avec
+
+188
+00:06:34,830 --> 00:06:35,850
+Slack, en général ?
+
+189
+00:06:35,850 --> 00:06:38,360
+Je construis simplement des trucs, je les connecte à Salesforce
+
+190
+00:06:38,360 --> 00:06:40,510
+données, se connecte à Slack, d'accord. Je sais
+
+191
+00:06:40,510 --> 00:06:41,670
+ce sont probablement les mêmes mains que moi
+
+192
+00:06:41,670 --> 00:06:42,930
+élever. Très bien, alors nous allons faire
+
+193
+00:06:42,930 --> 00:06:44,330
+nous sommes sûrs que nous abordons certains de ces problèmes
+
+194
+00:06:44,330 --> 00:06:46,970
+choses, et n'hésitez pas pendant la séance de questions-réponses ou
+
+195
+00:06:46,970 --> 00:06:49,230
+juste après la séance pour venir parler
+
+196
+00:06:49,230 --> 00:06:51,390
+Contactez-nous si vous avez d'autres questions.
+
+197
+00:06:51,890 --> 00:06:52,790
+D'accord,
+
+198
+00:06:53,150 --> 00:06:55,150
+principes d'architecture et de conception,
+
+199
+00:06:55,150 --> 00:06:56,490
+Je vais le transmettre à Fi.
+
+200
+00:06:56,900 --> 00:06:58,370
+Il va vous guider à travers tout cela.
+
+201
+00:06:58,510 --> 00:06:59,230
+Merci, Eugène.
+
+202
+00:06:59,350 --> 00:07:00,530
+Très bien, parlons de quelques
+
+203
+00:07:00,530 --> 00:07:02,070
+principes d'architecture et de design.
+
+204
+00:07:02,950 --> 00:07:04,450
+Et avant cela, mettons à niveau
+
+205
+00:07:04,450 --> 00:07:05,850
+définir et définir ce qu'est l'échelle,
+
+206
+00:07:05,850 --> 00:07:07,330
+Plus précisément, qu'est-ce que l'échelle pour nous ?
+
+207
+00:07:07,330 --> 00:07:09,250
+Donc, en tant qu'équipe, nous voulions nous rassembler
+
+208
+00:07:09,250 --> 00:07:12,130
+et déterminez simplement quelles sont les choses les plus importantes
+
+209
+00:07:12,130 --> 00:07:14,210
+nous pensons à l'échelle. Et donc la première
+
+210
+00:07:14,210 --> 00:07:15,550
+un, comme la plupart d'entre vous quand vous pensez à
+
+211
+00:07:15,550 --> 00:07:19,210
+échelle, votre pile d'applications est-elle capable
+
+212
+00:07:19,210 --> 00:07:21,430
+pour tolérer un trafic et une charge accrus.
+
+213
+00:07:21,530 --> 00:07:24,570
+C'est à la fois horizontal et vertical, et
+
+214
+00:07:24,570 --> 00:07:26,660
+Heroku nous permet de faire cela très facilement.
+
+215
+00:07:26,660 --> 00:07:29,210
+en nous permettant d'augmenter la taille du dyno
+
+216
+00:07:29,210 --> 00:07:32,190
+Nous utilisons donc davantage de ressources CPU et de mémoire.
+
+217
+00:07:32,190 --> 00:07:34,570
+capacité, ainsi que le nombre d'instances
+
+218
+00:07:34,570 --> 00:07:37,330
+de votre application que vous pouvez exécuter en même temps.
+
+219
+00:07:37,930 --> 00:07:39,750
+De plus, lorsque nous pensons à l’échelle,
+
+220
+00:07:40,150 --> 00:07:45,410
+nous pensons à soutenir la croissance au sein
+
+221
+00:07:45,410 --> 00:07:46,670
+l'entreprise, n'est-ce pas ? Nos candidatures
+
+222
+00:07:46,670 --> 00:07:50,910
+sont uniquement internes, et à mesure que nous embauchons davantage
+
+223
+00:07:50,910 --> 00:07:52,890
+les gens, à mesure que nous intégrons davantage de systèmes,
+
+224
+00:07:52,890 --> 00:07:54,630
+nous n'avons pas besoin de changer grand chose
+
+225
+00:07:54,630 --> 00:07:57,250
+à propos de notre système, et ça marche tout simplement.
+
+226
+00:07:57,430 --> 00:07:59,570
+Et puis le troisième, quand on y pense
+
+227
+00:07:59,570 --> 00:08:02,090
+l'échelle pour nous, c'est la capacité d'application
+
+228
+00:08:02,090 --> 00:08:04,370
+être soutenu par plusieurs équipes
+
+229
+00:08:04,370 --> 00:08:08,210
+à travers le monde. Nous avons des membres d'équipe dans
+
+230
+00:08:08,210 --> 00:08:09,630
+différents fuseaux horaires, juste des choses comme ça.
+
+231
+00:08:09,630 --> 00:08:10,350
+D'accord.
+
+232
+00:08:11,490 --> 00:08:12,330
+D'accord.
+
+233
+00:08:12,330 --> 00:08:13,910
+Je veux parler du problème que nous
+
+234
+00:08:13,910 --> 00:08:16,030
+nous essayions de résoudre. En tant qu'employés, nous
+
+235
+00:08:16,030 --> 00:08:17,870
+être inondé par beaucoup de choses chaque jour
+
+236
+00:08:17,870 --> 00:08:19,610
+à faire. Vous savez, c'est comme l'inscription
+
+237
+00:08:19,610 --> 00:08:21,070
+saison et vous devez vous inscrire pour votre
+
+238
+00:08:21,070 --> 00:08:23,090
+avantages ou vous devez enregistrer des commentaires pour
+
+239
+00:08:23,090 --> 00:08:24,910
+vos pairs. Et si vous possédiez, par exemple, un
+
+240
+00:08:24,910 --> 00:08:27,050
+application et vous devez approuver l'accès
+
+241
+00:08:27,050 --> 00:08:30,490
+pour les gens ? Et à l'ère de Slack, vous
+
+242
+00:08:30,490 --> 00:08:33,730
+sachez que tout cela était envoyé par e-mail auparavant.
+
+243
+00:08:33,810 --> 00:08:36,910
+Et nous avons remarqué que cela prenait beaucoup de
+
+244
+00:08:36,910 --> 00:08:38,830
+il est temps pour les gens d’accomplir ces tâches.
+
+245
+00:08:38,830 --> 00:08:41,790
+Et donc notre travail était d'apporter tous ces
+
+246
+00:08:41,790 --> 00:08:43,610
+alertes, toutes ces notifications dans
+
+247
+00:08:43,610 --> 00:08:45,730
+Slack où les gens travaillaient le plus,
+
+248
+00:08:45,830 --> 00:08:48,570
+l'application principale, l'objectif principal.
+
+249
+00:08:50,230 --> 00:08:53,050
+Et donc nous devons trouver une architecture
+
+250
+00:08:53,050 --> 00:08:56,010
+que nous voulions résoudre ce problème,
+
+251
+00:08:56,010 --> 00:08:58,530
+et nous avons atterri sur une architecture pilotée par les événements.
+
+252
+00:08:59,230 --> 00:09:01,250
+Et je vais fournir quelques statistiques pour
+
+253
+00:09:01,250 --> 00:09:04,050
+les gars, avant d'entrer dans le vif du sujet
+
+254
+00:09:04,050 --> 00:09:06,730
+-sérieux. mais pour l'instant nous sommes intégrés à propos de
+
+255
+00:09:06,730 --> 00:09:08,910
+avec 15 systèmes externes. C'est à la fois
+
+256
+00:09:08,910 --> 00:09:11,850
+Instances Salesforce et systèmes tiers
+
+257
+00:09:11,850 --> 00:09:14,050
+comme notre système RH ou notre système de dépenses.
+
+258
+00:09:15,650 --> 00:09:17,890
+Encore 80 000 employés chez Salesforce
+
+259
+00:09:17,890 --> 00:09:21,930
+en utilisant cette application ou en utilisant nos systèmes,
+
+260
+00:09:21,930 --> 00:09:24,150
+nos applications, et cela ne cesse de croître.
+
+261
+00:09:25,090 --> 00:09:28,230
+Et enfin, nous allons traiter
+
+262
+00:09:28,230 --> 00:09:30,470
+environ 30 messages par seconde et 150 messages
+
+263
+00:09:30,470 --> 00:09:32,370
+une seconde. Et si vous avez déjà travaillé avec des événements
+
+264
+00:09:32,370 --> 00:09:34,410
+-architecture pilotée par l'humain, ce n'est rien, n'est-ce pas ?
+
+265
+00:09:34,410 --> 00:09:36,190
+J'ai vu des systèmes dans notre industrie
+
+266
+00:09:36,190 --> 00:09:38,690
+traiter des dizaines de centaines de millions de
+
+267
+00:09:38,690 --> 00:09:41,690
+messages par seconde. Mais là n'est pas la question.
+
+268
+00:09:41,690 --> 00:09:45,210
+Nous voulions construire une architecture qui
+
+269
+00:09:45,210 --> 00:09:47,510
+croissance soutenue avec le nombre d'utilisateurs,
+
+270
+00:09:47,510 --> 00:09:48,630
+le nombre de systèmes que nous intégrons
+
+271
+00:09:48,630 --> 00:09:50,710
+avec. Il est également tolérant aux pannes, n'est-ce pas ?
+
+272
+00:09:50,710 --> 00:09:52,450
+où des parties de notre application échouent
+
+273
+00:09:52,450 --> 00:09:54,950
+avec différents systèmes d'intégration, et
+
+274
+00:09:54,950 --> 00:09:57,890
+nous pouvons encore fonctionner relativement bien.
+
+275
+00:09:57,890 --> 00:10:00,650
+et cela nous permet également de faire preuve de résilience
+
+276
+00:10:01,370 --> 00:10:03,250
+où nous pouvons revenir à une bonne
+
+277
+00:10:03,250 --> 00:10:06,250
+état une fois que nous nous serons remis de cela.
+
+278
+00:10:06,250 --> 00:10:07,910
+Nous avons donc beaucoup de marge de manœuvre.
+
+279
+00:10:09,430 --> 00:10:12,290
+Avant d’aborder les composantes de ce que
+
+280
+00:10:12,290 --> 00:10:14,050
+nous avons construit, je veux parler de l'événement.
+
+281
+00:10:14,610 --> 00:10:19,550
+C'est l'âme de la
+
+282
+00:10:19,550 --> 00:10:20,810
+architecture pilotée par les événements.
+
+283
+00:10:21,410 --> 00:10:23,610
+Et donc quelques points clés à propos de
+
+284
+00:10:23,610 --> 00:10:25,430
+l'événement est immuable.
+
+285
+00:10:25,430 --> 00:10:27,350
+Une fois créé par un producteur,
+
+286
+00:10:27,430 --> 00:10:29,090
+Cela ne peut jamais changer.
+
+287
+00:10:29,730 --> 00:10:32,810
+Et puis quand un événement se produit, il
+
+288
+00:10:32,810 --> 00:10:34,410
+est un indicateur d'un changement d'état.
+
+289
+00:10:34,410 --> 00:10:36,070
+Donc quelque chose s'est passé du côté du producteur
+
+290
+00:10:36,070 --> 00:10:39,310
+côté. Et donc c'est historique, n'est-ce pas ?
+
+291
+00:10:39,730 --> 00:10:42,810
+Et puis l'événement contient quelques informations
+
+292
+00:10:42,810 --> 00:10:46,450
+Et ceci est un schéma. C'est le
+
+293
+00:10:46,530 --> 00:10:48,670
+contrat entre votre producteur et votre consommateur.
+
+294
+00:10:48,670 --> 00:10:50,450
+Et sur le côté droit, c'est juste
+
+295
+00:10:50,450 --> 00:10:53,350
+un exemple d'un événement d'approbation que nous
+
+296
+00:10:53,350 --> 00:10:55,670
+Il contient donc des métadonnées sur le créateur
+
+297
+00:10:55,670 --> 00:10:58,230
+ça, d'où ça vient, le statut de
+
+298
+00:10:58,230 --> 00:11:00,550
+l'approbation, des choses comme ça. Donc, c'est utilisé
+
+299
+00:11:00,550 --> 00:11:04,210
+pour le routage et d'autres choses comme ça.
+
+300
+00:11:05,270 --> 00:11:06,110
+Ouais.
+
+301
+00:11:07,110 --> 00:11:09,210
+Il y a donc beaucoup de choses à couvrir, mais je veux juste
+
+302
+00:11:09,210 --> 00:11:11,930
+se concentrer sur la façon dont nous nous intégrons à Salesforce
+
+303
+00:11:11,930 --> 00:11:13,730
+des cas, d'accord ? Je vais donc commencer
+
+304
+00:11:13,730 --> 00:11:15,450
+avec le modèle d'intégration classique.
+
+305
+00:11:15,450 --> 00:11:19,450
+Donc ici, j'ai un espace privé Heroku, et je
+
+306
+00:11:19,450 --> 00:11:21,270
+j'ai une application Heroku appelée Approbations.
+
+307
+00:11:21,570 --> 00:11:23,850
+Et il peut avoir une base de données Postgres pour
+
+308
+00:11:23,850 --> 00:11:25,570
+stockage d'état. Vous savez, Heroku le fait
+
+309
+00:11:25,570 --> 00:11:27,530
+c'est vraiment sympa de pouvoir les provisionner
+
+310
+00:11:27,530 --> 00:11:30,550
+des services de données comme Kafka ou Redis. Et
+
+311
+00:11:30,550 --> 00:11:33,090
+Nous avons donc décidé d'utiliser Postgres. Et c'est
+
+312
+00:11:33,090 --> 00:11:35,250
+connecté à Slack à l'aide d'un WebSocket
+
+313
+00:11:35,250 --> 00:11:38,710
+et en utilisant l'API Slack pour envoyer des messages,
+
+314
+00:11:38,710 --> 00:11:40,250
+pour répondre aux événements, à des choses comme ça.
+
+315
+00:11:41,770 --> 00:11:44,750
+Et maintenant, nous intégrons des instances Salesforce.
+
+316
+00:11:45,290 --> 00:11:48,830
+Nous aimons l'architecture événementielle partout
+
+317
+00:11:48,830 --> 00:11:50,930
+dans toute la pile. Salesforce fournit
+
+318
+00:11:50,930 --> 00:11:53,310
+une technologie prête à l'emploi pour
+
+319
+00:11:53,310 --> 00:11:55,210
+architecture pilotée par événements. Ils utilisent donc
+
+320
+00:11:55,210 --> 00:11:57,830
+événements de plateforme ou capture de données de modification du CDC
+
+321
+00:11:57,830 --> 00:12:00,610
+événements. Et ils sont sympas parce que quand
+
+322
+00:12:00,610 --> 00:12:03,070
+les choses sont créées dans l'organisation, les choses sont
+
+323
+00:12:03,070 --> 00:12:05,970
+modifiés ou des processus sont démarrés, ceux-ci
+
+324
+00:12:05,970 --> 00:12:08,170
+les événements peuvent être produits par Salesforce.
+
+325
+00:12:09,570 --> 00:12:13,090
+Et puis il y a quelques problèmes que je vais
+
+326
+00:12:13,090 --> 00:12:15,910
+mentionner, mais vous devez également, avant
+
+327
+00:12:15,910 --> 00:12:17,710
+vous pouvez consommer des événements, vous devrez
+
+328
+00:12:17,710 --> 00:12:20,390
+savoir s'authentifier, n'est-ce pas ? Il y a
+
+329
+00:12:20,390 --> 00:12:22,050
+de nombreuses façons. OAuth, vous pouvez utiliser le client
+
+330
+00:12:22,050 --> 00:12:25,630
+informations d'identification. Vous pouvez utiliser JWT dans cet exemple.
+
+331
+00:12:26,370 --> 00:12:28,530
+Et puis il faut échanger,
+
+332
+00:12:28,530 --> 00:12:30,310
+vous devez vous authentifier auprès de Salesforce pour
+
+333
+00:12:30,310 --> 00:12:31,950
+obtenir un jeton d'accès, n'est-ce pas ? Il y a donc
+
+334
+00:12:31,950 --> 00:12:33,830
+quelques problèmes que je vais souligner
+
+335
+00:12:33,830 --> 00:12:36,330
+il s'agit de la demande d'approbation,
+
+336
+00:12:36,330 --> 00:12:37,970
+votre application doit savoir comment
+
+337
+00:12:37,970 --> 00:12:40,150
+consommer ces événements depuis Salesforce. Donc vous
+
+338
+00:12:40,150 --> 00:12:42,190
+peut utiliser une bibliothèque comme une bibliothèque PubSub,
+
+339
+00:12:43,410 --> 00:12:47,430
+une bibliothèque gRPC. Et puis il faut aussi…
+
+340
+00:12:47,430 --> 00:12:49,710
+si vous avez déjà travaillé avec des événements de plateforme,
+
+341
+00:12:49,710 --> 00:12:53,290
+vous devez garder une trace du curseur pour
+
+342
+00:12:53,290 --> 00:12:55,790
+sachez à quel message vous vous trouvez dans la file d'attente.
+
+343
+00:12:55,830 --> 00:12:58,310
+Et donc si votre application redémarre,
+
+344
+00:12:58,310 --> 00:12:59,630
+vous pouvez reprendre là où vous vous êtes arrêté.
+
+345
+00:12:59,830 --> 00:13:01,590
+Voilà donc une pièce.
+
+346
+00:13:01,590 --> 00:13:03,030
+La demande d'approbation doit
+
+347
+00:13:03,030 --> 00:13:04,350
+savoir également s'authentifier avec
+
+348
+00:13:04,350 --> 00:13:06,090
+Salesforce. Vous avez donc probablement besoin d'un
+
+349
+00:13:06,090 --> 00:13:08,210
+Bibliothèque OAuth d'une certaine sorte à connaître
+
+350
+00:13:08,210 --> 00:13:09,390
+comment s'authentifier avec Salesforce.
+
+351
+00:13:09,950 --> 00:13:12,170
+Et puis une chose qui ne se produit probablement pas
+
+352
+00:13:12,170 --> 00:13:14,750
+se démarquer est comment connaissez-vous Salesforce
+
+353
+00:13:14,770 --> 00:13:17,630
+L'événement de la plateforme CDC parle de la même chose
+
+354
+00:13:17,630 --> 00:13:19,970
+Langue comme approbations ? Il n'y a pas de schéma.
+
+355
+00:13:19,970 --> 00:13:22,510
+vérification ou validation entre les deux.
+
+356
+00:13:25,490 --> 00:13:29,830
+C'est donc là qu'un nouveau module complémentaire est en cours de développement.
+
+357
+00:13:29,830 --> 00:13:32,430
+développé par Salesforce dans Slack, dans Heroku,
+
+358
+00:13:32,430 --> 00:13:35,190
+appelé Heroku Eventing. C'est une autre extension
+
+359
+00:13:35,190 --> 00:13:37,630
+-similaire à Postgres ou Redis ou Kafka,
+
+360
+00:13:37,710 --> 00:13:39,950
+et il gère les choses que j'ai mentionnées
+
+361
+00:13:39,950 --> 00:13:41,930
+avant la diapositive, où elle
+
+362
+00:13:41,930 --> 00:13:44,350
+sait comment s'authentifier avec Salesforce
+
+363
+00:13:44,350 --> 00:13:47,150
+et actualiser la session. Il sait comment
+
+364
+00:13:47,150 --> 00:13:49,130
+pour consommer des événements de plateforme ou CDC
+
+365
+00:13:49,130 --> 00:13:51,710
+événements. Et il gère tout cela pour vous.
+
+366
+00:13:51,990 --> 00:13:53,890
+Et maintenant votre demande d'approbation
+
+367
+00:13:53,890 --> 00:13:55,550
+il faudra juste savoir comment...
+
+368
+00:13:55,550 --> 00:13:56,810
+Il pourrait s’agir simplement d’une API REST.
+
+369
+00:13:56,870 --> 00:13:58,670
+Et Heroku Eventing va simplement poster sur
+
+370
+00:13:58,670 --> 00:14:01,410
+votre demande d'approbation. Et voilà.
+
+371
+00:14:01,610 --> 00:14:03,190
+Pour la partie schéma,
+
+372
+00:14:03,490 --> 00:14:05,370
+Heroku Eventing ne gère pas ça. Mais
+
+373
+00:14:05,370 --> 00:14:07,630
+pour nous, nous avons mis au point un package de déverrouillage
+
+374
+00:14:07,630 --> 00:14:12,190
+que nous partageons avec ces organisations. Nous
+
+375
+00:14:12,190 --> 00:14:14,230
+construit la plateforme pour toutes nos applications.
+
+376
+00:14:14,230 --> 00:14:16,490
+mais nous ne possédons aucun des processus
+
+377
+00:14:16,490 --> 00:14:19,930
+ou les instances d'organisations chez Salesforce.
+
+378
+00:14:20,190 --> 00:14:22,690
+Et donc nous avons créé Unlock Package
+
+379
+00:14:22,690 --> 00:14:24,570
+avec certaines interfaces, certains modèles qui
+
+380
+00:14:24,570 --> 00:14:27,430
+ils peuvent utiliser pour générer l'événement
+
+381
+00:14:27,430 --> 00:14:30,230
+elle-même qui représente notre schéma.
+
+382
+00:14:33,190 --> 00:14:36,590
+Une chose que je voudrais mentionner est de
+
+383
+00:14:36,590 --> 00:14:39,710
+la diapositive précédente ici, c'est que c'est juste
+
+384
+00:14:39,710 --> 00:14:41,390
+un exemple d'une instance de Salesforce.
+
+385
+00:14:41,390 --> 00:14:44,490
+Étendez cela à 10 instances de Salesforce.
+
+386
+00:14:44,490 --> 00:14:46,930
+Maintenant, vous gérez, pour l'authentification JWT,
+
+387
+00:14:46,930 --> 00:14:48,670
+10 certificats uniques différents et
+
+388
+00:14:48,670 --> 00:14:51,310
+clés privées puis 10 curseurs différents,
+
+389
+00:14:51,310 --> 00:14:54,670
+C'est vrai ? C'est un gros problème.
+
+390
+00:14:54,710 --> 00:14:57,070
+Ok, parlons maintenant des tiers
+
+391
+00:14:57,070 --> 00:14:59,250
+des systèmes comme votre système de dépenses qui
+
+392
+00:14:59,250 --> 00:15:02,530
+ce n'est pas Salesforce ou votre système RH.
+
+393
+00:15:02,530 --> 00:15:05,210
+Et donc pour nous, nous avions besoin d'un moyen pour ceux-là
+
+394
+00:15:05,210 --> 00:15:07,350
+systèmes pour nous envoyer également des événements. Et
+
+395
+00:15:07,350 --> 00:15:09,690
+nous avons donc placé notre passerelle API devant
+
+396
+00:15:09,690 --> 00:15:12,350
+l'ensemble de notre pile d'applications. Cela fonctionne très bien
+
+397
+00:15:12,350 --> 00:15:14,430
+des choses similaires à notre package de déverrouillage.
+
+398
+00:15:14,430 --> 00:15:17,250
+Il effectue la validation de l'événement lui-même.
+
+399
+00:15:17,250 --> 00:15:18,870
+Ainsi, ces systèmes tiers peuvent envoyer
+
+400
+00:15:18,870 --> 00:15:22,190
+leur message avec notre schéma à travers
+
+401
+00:15:22,190 --> 00:15:24,190
+Passerelle API où la validation a lieu.
+
+402
+00:15:25,010 --> 00:15:27,610
+Et puis, encore une fois, nous aimons les événements
+
+403
+00:15:27,610 --> 00:15:30,510
+architecture, nous avons donc un courtier Kafka directement dans
+
+404
+00:15:30,510 --> 00:15:32,330
+le milieu par lequel les messages arrivent
+
+405
+00:15:32,330 --> 00:15:34,910
+la passerelle API. Nous l'avons placée sur un sujet Kafka.
+
+406
+00:15:34,910 --> 00:15:37,510
+Et puis pour l'événement Heroku, nous pointons simplement
+
+407
+00:15:37,510 --> 00:15:39,810
+à Kafka, et maintenant nos approbations
+
+408
+00:15:39,810 --> 00:15:42,230
+l'application consiste simplement à écouter un seul sujet.
+
+409
+00:15:44,210 --> 00:15:46,750
+Très bien, donc en prenant du recul, ceci
+
+410
+00:15:46,750 --> 00:15:48,150
+n'est qu'un extrait de notre architecture,
+
+411
+00:15:48,150 --> 00:15:50,170
+mais vous pouvez voir que nous sommes intégrés dans
+
+412
+00:15:50,170 --> 00:15:52,890
+six instances Salesforce différentes et
+
+413
+00:15:52,890 --> 00:15:55,570
+puis une poignée de systèmes tiers
+
+414
+00:15:55,570 --> 00:15:58,010
+comme Workday ou Concur, par exemple.
+
+415
+00:15:58,150 --> 00:16:00,630
+Et ils passent tous par chacun, toi
+
+416
+00:16:00,630 --> 00:16:02,150
+savoir, Heroku Eventing ou API Gateway,
+
+417
+00:16:02,150 --> 00:16:05,320
+mais tout atterrit sur notre courtier Kafka et
+
+418
+00:16:05,320 --> 00:16:07,710
+passe en revue chacune de nos applications.
+
+419
+00:16:09,470 --> 00:16:11,350
+Très bien, parlons de la démo.
+
+420
+00:16:13,890 --> 00:16:16,830
+Avant de commencer, je voudrais poser les
+
+421
+00:16:16,830 --> 00:16:18,930
+fondation, d'accord ? Alors, cette démo, je vais
+
+422
+00:16:18,930 --> 00:16:20,350
+J'ai une organisation à partir de zéro. Je vais l'appeler
+
+423
+00:16:20,350 --> 00:16:22,350
+Ça, mais ça n'a pas vraiment d'importance. Ça a
+
+424
+00:16:22,350 --> 00:16:24,490
+un événement de plateforme. Et puis j'ai
+
+425
+00:16:24,490 --> 00:16:27,130
+fourniture d'événements Heroku, l'add-on
+
+426
+00:16:27,130 --> 00:16:28,950
+lui-même, et il est vide, non configuré.
+
+427
+00:16:29,210 --> 00:16:31,330
+Et puis sur le côté droit, j'ai
+
+428
+00:16:31,330 --> 00:16:33,350
+une application. Et vous verrez que c'est
+
+429
+00:16:33,350 --> 00:16:35,290
+un travailleur parce qu'il y a deux façons de
+
+430
+00:16:35,290 --> 00:16:37,730
+peut s'intégrer aux événements Heroku.
+
+431
+00:16:37,730 --> 00:16:40,650
+via une API Web, une API REST ou
+
+432
+00:16:40,650 --> 00:16:43,010
+via un travailleur, dont je vais d'abord faire la démonstration.
+
+433
+00:16:43,230 --> 00:16:43,750
+D'accord.
+
+434
+00:16:44,610 --> 00:16:45,570
+D'accord.
+
+435
+00:16:48,370 --> 00:16:51,670
+Bon, d'accord. Je vais vous montrer, je suis
+
+436
+00:16:51,670 --> 00:16:53,210
+je vais m'assurer que c'est rafraîchi ici.
+
+437
+00:16:53,210 --> 00:16:55,610
+J'ai une organisation scratch et j'ai défini un
+
+438
+00:16:55,610 --> 00:16:58,590
+événement, un événement de plateforme appelé événement TDX25.
+
+439
+00:17:00,530 --> 00:17:02,770
+Et tout ce que j'ai, c'est un champ personnalisé appelé
+
+440
+00:17:02,770 --> 00:17:05,270
+un message dessus, et c'est juste un champ de texte.
+
+441
+00:17:05,690 --> 00:17:07,510
+255 caractères, c'est tout ce que nous avons vraiment
+
+442
+00:17:07,510 --> 00:17:09,250
+attention pour l'instant, pour cette démo.
+
+443
+00:17:10,610 --> 00:17:12,170
+Pour l'application,
+
+444
+00:17:12,750 --> 00:17:13,910
+c'est juste
+
+445
+00:17:14,530 --> 00:17:15,330
+ExpressNode
+
+446
+00:17:17,190 --> 00:17:17,990
+serveur,
+
+447
+00:17:18,570 --> 00:17:20,710
+et je vais vous montrer ce que j'ai jusqu'à présent.
+
+448
+00:17:21,380 --> 00:17:22,870
+Nous allons commencer par le travailleur, et nous allons
+
+449
+00:17:22,870 --> 00:17:25,010
+Je vais bientôt accéder au web. Mais tout ce que c'est, c'est
+
+450
+00:17:25,010 --> 00:17:28,190
+lorsque vous provisionnez le module complémentaire d'événement Heroku,
+
+451
+00:17:28,290 --> 00:17:30,690
+il définit un événement Heroku s'abonner
+
+452
+00:17:30,690 --> 00:17:32,750
+URL à partir de laquelle vous pouvez consommer.
+
+453
+00:17:34,230 --> 00:17:37,270
+J'ai également défini une intégration Slack
+
+454
+00:17:37,530 --> 00:17:39,870
+où j'ai le bot Slack, et je vais montrer
+
+455
+00:17:39,870 --> 00:17:41,330
+vous le direz dans une seconde, mais c'est juste
+
+456
+00:17:41,330 --> 00:17:43,410
+comment nous interagissons avec l'API Slack, juste
+
+457
+00:17:43,410 --> 00:17:45,190
+pour envoyer des messages pour répondre aux événements.
+
+458
+00:17:46,570 --> 00:17:49,510
+Et j'ai cette fonction d'intervalle définie. Tout
+
+459
+00:17:49,510 --> 00:17:51,310
+ce qu'il fait, c'est extraire cette URL d'abonnement
+
+460
+00:17:51,310 --> 00:17:53,910
+toutes les cinq secondes, et il va recevoir
+
+461
+00:17:53,910 --> 00:17:56,050
+l'événement et publier un message sur une chaîne.
+
+462
+00:17:56,090 --> 00:17:57,950
+C'est comme ça que je l'ai jusqu'à présent.
+
+463
+00:17:59,890 --> 00:18:02,330
+Et du côté d'Heroku, voici mon
+
+464
+00:18:02,330 --> 00:18:04,990
+application de test, et j'ai des événements Heroku.
+
+465
+00:18:05,070 --> 00:18:07,310
+Le Web et le travailleur fonctionnent tous les deux, ou
+
+466
+00:18:07,310 --> 00:18:09,650
+sont allumés, un seul dinosaure par pour l'instant.
+
+467
+00:18:09,710 --> 00:18:11,070
+Et je vais te montrer ce que
+
+468
+00:18:11,070 --> 00:18:12,210
+ça semble être pour bientôt.
+
+469
+00:18:12,810 --> 00:18:15,450
+Et puis du côté de Slack, j'ai juste ça
+
+470
+00:18:15,450 --> 00:18:17,510
+chaîne vide à laquelle je me suis inscrit
+
+471
+00:18:17,510 --> 00:18:21,110
+vous verrez un message une fois que je vous l'aurai montré.
+
+472
+00:18:21,790 --> 00:18:23,330
+Très bien, alors.
+
+473
+00:18:24,610 --> 00:18:26,810
+Alors tout d’abord, si vous vous en souvenez,
+
+474
+00:18:26,810 --> 00:18:28,290
+il y aura deux composants
+
+475
+00:18:28,290 --> 00:18:30,410
+pour configurer les événements Heroku.
+
+476
+00:18:30,710 --> 00:18:33,070
+Tout d’abord, vous avez besoin d’une autorisation définie avec
+
+477
+00:18:33,070 --> 00:18:35,050
+votre instance Salesforce, et ensuite vous êtes
+
+478
+00:18:35,050 --> 00:18:36,810
+va créer un abonnement au
+
+479
+00:18:36,810 --> 00:18:39,310
+Événement de plateforme. Commençons par l'autoriser.
+
+480
+00:18:39,350 --> 00:18:41,670
+Alors allons-y avec...
+
+481
+00:18:42,910 --> 00:18:44,450
+On y va.
+
+482
+00:18:44,550 --> 00:18:45,310
+D'accord.
+
+483
+00:18:45,310 --> 00:18:47,950
+C'est donc la première commande à autoriser.
+
+484
+00:18:47,950 --> 00:18:50,550
+Encore une fois, il sera publié dans le
+
+485
+00:18:50,550 --> 00:18:53,730
+Documentation Heroku, mais tout ce qu'il fait est
+
+486
+00:18:53,730 --> 00:18:56,050
+autorisation avec une instance Salesforce. Vous êtes
+
+487
+00:18:56,050 --> 00:18:58,730
+Je vais lui donner un nom. Je lui ai donné TDX25 démo
+
+488
+00:18:58,730 --> 00:19:01,730
+org1, par exemple. et ensuite je fournis un
+
+489
+00:19:01,730 --> 00:19:03,830
+URL de connexion donc si c'est de la production, ça pourrait
+
+490
+00:19:03,830 --> 00:19:06,310
+connectez-vous à salesforce.com mais comme c'est un
+
+491
+00:19:06,310 --> 00:19:09,090
+scratch org Je viens de lui donner le bon domaine.
+
+492
+00:19:09,870 --> 00:19:13,100
+Alors je vais autoriser, d'accord
+
+493
+00:19:15,440 --> 00:19:17,000
+alors ça va ouvrir mon navigateur
+
+494
+00:19:17,000 --> 00:19:18,670
+il va me demander de me connecter.
+
+495
+00:19:18,890 --> 00:19:21,790
+Normalement, vous utiliseriez un service
+
+496
+00:19:21,790 --> 00:19:23,050
+utilisateur mais tu sais que je vais
+
+497
+00:19:23,050 --> 00:19:24,050
+scratch org donc je n'en ai qu'un
+
+498
+00:19:24,050 --> 00:19:25,950
+environnement. Laissez-moi me connecter très rapidement.
+
+499
+00:19:34,640 --> 00:19:36,820
+J'ai donc mon nom d'utilisateur et mon mot de passe
+
+500
+00:19:36,820 --> 00:19:38,480
+enregistré Je vais me connecter à nouveau,
+
+501
+00:19:38,680 --> 00:19:39,640
+c'est un succès.
+
+502
+00:19:40,800 --> 00:19:42,520
+Je peux donc fermer ça.
+
+503
+00:19:43,040 --> 00:19:45,640
+Donc mon terminal, je suis autorisé.
+
+504
+00:19:45,640 --> 00:19:46,660
+Très bien, la deuxième commande
+
+505
+00:19:46,660 --> 00:19:47,860
+est en train de configurer l'abonnement.
+
+506
+00:19:48,240 --> 00:19:50,400
+Alors je l'ai cuit ici.
+
+507
+00:19:51,820 --> 00:19:53,980
+Abonnements aux événements So Heroku
+
+508
+00:19:53,980 --> 00:19:55,140
+Salesforce Create,
+
+509
+00:19:55,140 --> 00:19:56,820
+tu lui donnes un nom. Alors j'ai donné
+
+510
+00:19:56,820 --> 00:19:59,280
+il s'agit d'un abonnement à tdxdemo.org.
+
+511
+00:19:59,320 --> 00:20:01,760
+Et puis vous précisez le sujet. Donc
+
+512
+00:20:01,760 --> 00:20:03,960
+si vous vous souvenez de ça, c'est ici
+
+513
+00:20:05,160 --> 00:20:06,820
+fait référence au nom de l'API
+
+514
+00:20:06,820 --> 00:20:08,020
+de votre événement de plateforme,
+
+515
+00:20:08,300 --> 00:20:09,240
+d'accord?
+
+516
+00:20:11,260 --> 00:20:13,840
+Et puis vous lui transmettez également l'application que vous utilisez
+
+517
+00:20:13,840 --> 00:20:15,760
+en l'appliquant, c'est donc l'application Heroku
+
+518
+00:20:15,760 --> 00:20:18,120
+nom, puis vous lui transmettez l'autorisation
+
+519
+00:20:18,120 --> 00:20:19,620
+nom que vous avez défini dans le précédent
+
+520
+00:20:19,620 --> 00:20:22,580
+Étape, n'est-ce pas ? Je l'ai nommé TX25, démo org 1.
+
+521
+00:20:25,780 --> 00:20:27,760
+Ok, donc maintenant tout est configuré.
+
+522
+00:20:28,360 --> 00:20:30,620
+Du côté de l'organisation, je vais
+
+523
+00:20:30,620 --> 00:20:32,240
+utilise juste un Apex anonyme. Je vais
+
+524
+00:20:32,240 --> 00:20:33,340
+je vais vous montrer à quoi ça ressemble.
+
+525
+00:20:35,680 --> 00:20:36,820
+Désolé pour ça.
+
+526
+00:20:44,160 --> 00:20:47,620
+Tout ce que j'ai ici c'est moi
+
+527
+00:20:47,620 --> 00:20:49,440
+généré un événement de plateforme,
+
+528
+00:20:49,620 --> 00:20:52,640
+et j'ai mis le message, cette coutume
+
+529
+00:20:52,640 --> 00:20:54,000
+champ que je vous ai montré précédemment.
+
+530
+00:20:54,000 --> 00:20:56,200
+Tout ce que c'est, c'est un champ de texte, et je suis juste
+
+531
+00:20:56,200 --> 00:20:58,220
+je vais envoyer bonjour TDX 25 dedans.
+
+532
+00:20:58,450 --> 00:20:59,660
+Et puis je vais l'envoyer
+
+533
+00:20:59,660 --> 00:21:01,660
+au bus de l'événement à Pulver Ship.
+
+534
+00:21:02,980 --> 00:21:05,360
+Avant d'exécuter, je veux juste
+
+535
+00:21:05,360 --> 00:21:07,040
+ouvrir les journaux et vous montrer ce que
+
+536
+00:21:07,040 --> 00:21:08,180
+ça se passe en arrière-plan.
+
+537
+00:21:09,180 --> 00:21:10,760
+Alors si vous regardez, souvenez-vous, cinq
+
+538
+00:21:10,760 --> 00:21:12,700
+secondes d'intervalle. Il n'a donc pas détecté
+
+539
+00:21:12,700 --> 00:21:13,900
+aucun message, donc ça va juste
+
+540
+00:21:13,900 --> 00:21:15,520
+continuer à courir pendant cinq secondes.
+
+541
+00:21:17,200 --> 00:21:20,660
+Donc du côté de l'événement Heroku, voyons voir,
+
+542
+00:21:20,940 --> 00:21:22,400
+ok, d'accord, j'y vais
+
+543
+00:21:22,400 --> 00:21:25,900
+pour réussir ici.
+
+544
+00:21:25,940 --> 00:21:28,060
+Et puis si vous regardez dans les journaux, c'est
+
+545
+00:21:28,060 --> 00:21:30,120
+je viens de sortir à toute vitesse, j'ai un journal de console
+
+546
+00:21:30,120 --> 00:21:33,800
+Cela résume tout l'événement. Et vous pouvez
+
+547
+00:21:33,800 --> 00:21:35,760
+voyez qu'il y a un message, bonjour, TX25.
+
+548
+00:21:36,260 --> 00:21:39,200
+Et puis sur ma chaîne, je l'ai posté.
+
+549
+00:21:40,480 --> 00:21:41,420
+D'accord.
+
+550
+00:21:42,880 --> 00:21:45,300
+Ok, donc c'est un modèle. Moi aussi
+
+551
+00:21:45,300 --> 00:21:48,300
+je veux te montrer le web, le web
+
+552
+00:21:48,300 --> 00:21:51,020
+forme, le modèle d'intégration Web.
+
+553
+00:21:51,140 --> 00:21:53,180
+Donc c'est un peu différent. Il faut
+
+554
+00:21:53,180 --> 00:21:54,720
+un troisième composant. Il vous faut donc
+
+555
+00:21:54,720 --> 00:21:56,940
+pour créer un flux d'événements. Et vous
+
+556
+00:21:56,940 --> 00:21:58,800
+peut considérer cela comme un événement Heroku
+
+557
+00:21:58,800 --> 00:22:00,940
+publication sur un webhook, un point de terminaison REST.
+
+558
+00:22:00,940 --> 00:22:02,460
+Et pour que, mon REPOS
+
+559
+00:22:02,460 --> 00:22:04,400
+le point final est le dyno Web.
+
+560
+00:22:04,400 --> 00:22:07,960
+Et donc si je reviens pour montrer
+
+561
+00:22:07,960 --> 00:22:09,280
+à quoi ressemble le Web,
+
+562
+00:22:09,980 --> 00:22:14,260
+ici même, donc sur le serveur web,
+
+563
+00:22:14,920 --> 00:22:18,040
+J'ai juste un point de terminaison de réception où il est
+
+564
+00:22:18,040 --> 00:22:19,380
+faire exactement la même chose que le travailleur
+
+565
+00:22:19,380 --> 00:22:21,700
+faire, sauf que ça ne fonctionne pas tous les
+
+566
+00:22:21,700 --> 00:22:23,560
+cinq secondes. Il ne reste plus qu'à attendre
+
+567
+00:22:23,560 --> 00:22:25,660
+événement pour atteindre le point final, et c'est juste
+
+568
+00:22:25,660 --> 00:22:27,680
+poster un message, même chose qu'avant.
+
+569
+00:22:29,940 --> 00:22:31,140
+Je vais éteindre le travailleur
+
+570
+00:22:31,140 --> 00:22:34,300
+pendant que je fais ça parce que si je le laissais
+
+571
+00:22:34,300 --> 00:22:36,820
+les deux allumés, vous verrez deux messages.
+
+572
+00:22:36,920 --> 00:22:38,180
+Alors je vais juste tourner
+
+573
+00:22:38,180 --> 00:22:39,020
+hors du travail pour le moment.
+
+574
+00:22:39,380 --> 00:22:40,660
+Et puis je vais
+
+575
+00:22:40,660 --> 00:22:42,240
+passer au journal Web.
+
+576
+00:22:43,120 --> 00:22:43,920
+D'accord.
+
+577
+00:22:45,660 --> 00:22:47,780
+Bon, revenons à notre terminal. Nous sommes
+
+578
+00:22:47,780 --> 00:22:48,760
+va créer ce troisième
+
+579
+00:22:48,760 --> 00:22:50,580
+composant, qui est ce flux d'événements.
+
+580
+00:22:52,280 --> 00:22:54,440
+Laissez-moi clarifier pour que cela soit clair.
+
+581
+00:22:54,440 --> 00:22:55,400
+un peu plus clair.
+
+582
+00:22:59,140 --> 00:23:00,860
+D'accord. Très bien. Donc nous créons
+
+583
+00:23:00,860 --> 00:23:02,220
+le flux d'événements, le webhook.
+
+584
+00:23:02,980 --> 00:23:05,140
+Commande similaire, webhook de publication d'événements
+
+585
+00:23:05,140 --> 00:23:06,820
+créer. Vous allez lui donner un nom. Alors
+
+586
+00:23:06,820 --> 00:23:09,740
+Je viens de lui donner, vous savez, un crochet d'événement organisationnel.
+
+587
+00:23:09,740 --> 00:23:11,480
+Et puis je lui ai dit quelle application
+
+588
+00:23:11,480 --> 00:23:12,600
+Je vais l'appliquer à.
+
+589
+00:23:12,720 --> 00:23:14,960
+Et ici, le paramètre URL, je vais
+
+590
+00:23:14,960 --> 00:23:16,900
+transmettez-lui le point de terminaison, le point de terminaison du webhook.
+
+591
+00:23:17,220 --> 00:23:19,240
+Donc c'est le domaine de mon
+
+592
+00:23:19,240 --> 00:23:21,620
+application, barre oblique recevoir, j'ai montré
+
+593
+00:23:21,620 --> 00:23:23,840
+vous dans le code, le code source.
+
+594
+00:23:24,260 --> 00:23:25,360
+Et puis je vais
+
+595
+00:23:25,360 --> 00:23:27,540
+dis-lui quel abonnement
+
+596
+00:23:27,740 --> 00:23:29,820
+que ce webhook doit écouter.
+
+597
+00:23:29,820 --> 00:23:32,120
+Vous pouvez imaginer que ce webhook peut
+
+598
+00:23:32,120 --> 00:23:33,540
+écouter plusieurs abonnements.
+
+599
+00:23:35,070 --> 00:23:36,500
+Mais pour l'instant, je n'en ai qu'un.
+
+600
+00:23:36,690 --> 00:23:38,140
+Je vais installer ça. Alors
+
+601
+00:23:43,760 --> 00:23:45,240
+nous pouvons faire exactement la même chose.
+
+602
+00:23:46,140 --> 00:23:49,680
+Une chose que j'ai vu, c'est qu'il faut un peu de temps
+
+603
+00:23:49,680 --> 00:23:52,540
+bit pour que le webhook s'initialise, donc
+
+604
+00:23:52,540 --> 00:23:54,280
+Je devrai peut-être envoyer le message deux fois.
+
+605
+00:23:54,280 --> 00:23:58,080
+Mais vous verrez l'exemple. donc j'ai
+
+606
+00:23:58,080 --> 00:24:00,920
+mes journaux et ensuite je peux publier un événement
+
+607
+00:24:02,740 --> 00:24:06,340
+donc le succès ici et ça n'a pas l'air
+
+608
+00:24:06,340 --> 00:24:08,900
+ça n'avait pas l'air d'être initialisé
+
+609
+00:24:08,900 --> 00:24:10,360
+alors je vais réessayer alors
+
+610
+00:24:20,210 --> 00:24:22,270
+c'est encore un site web et il a reçu
+
+611
+00:24:22,270 --> 00:24:24,570
+l'événement puis dans ma candidature
+
+612
+00:24:24,570 --> 00:24:26,650
+Je l'ai préfixé avec web mais il
+
+613
+00:24:26,650 --> 00:24:28,890
+dit le même message bonjour TDX 25
+
+614
+00:24:29,270 --> 00:24:30,270
+Très bien
+
+615
+00:24:33,170 --> 00:24:34,650
+Je vais le laisser passer
+
+616
+00:24:34,650 --> 00:24:37,350
+à Yudin pour aller au contrôle qualité ?
+
+617
+00:24:37,470 --> 00:24:39,230
+Ouais, ça a l'air bien.
+
+618
+00:24:40,750 --> 00:24:42,190
+Merci, Fee.
