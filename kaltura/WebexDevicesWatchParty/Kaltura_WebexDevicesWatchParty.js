@@ -11,7 +11,7 @@ const appTokenId = '';
 const appToken = '';
 const partnerId = ;
 const secret = '';
-const uiConfId = ;
+const uiConfId = ;  // for this player, ensure that it is set to Autoplay = true
 const kalturaApiBaseUrl = 'https://www.kaltura.com/api_v3';
 // set url syntax for events
 //V7 player
@@ -53,7 +53,7 @@ function getMapItemByChildValue(map, childKey, childValue) {
 
 // GUID generator
 function generateGUID() {
-  return xapi.command('HttpClient Get', { 'Header': 'Content-Type: application/json' , 'Url': 'https://www.uuidgenerator.net/api/guid', 'AllowInsecureHTTPS': 'False', 'ResultBody': 'PlainText'};
+  return xapi.command('HttpClient Get', { 'Header': 'Content-Type: application/json' , 'Url': 'https://www.uuidgenerator.net/api/guid', 'AllowInsecureHTTPS': 'False', 'ResultBody': 'PlainText'});
 }
 
 // function to get Webex device info
@@ -211,7 +211,7 @@ function handleListEvent(event) {
     let GUID = generateGUID().then(
       function (success) {
         // add the event to the device Bookings
-        xapi.command('Bookings Book', {BookingRequestUUID: GUID, Duration: duration, StartTime: startTime.toISOString(), Title: event.summary}).then(
+        xapi.command('Bookings Book', {BookingRequestUUID: GUID.Body, Duration: duration, StartTime: startTime.toISOString(), Title: event.summary}).then(
           function (success) {
             // and add/update the Map
             upcomingEvents.set(event.templateEntryId, {State: 'inactive', GUID: GUID, Event: event});
@@ -365,3 +365,11 @@ function main() {
 
 // start the process
 main();
+
+
+//@TODO
+
+//add logic route to bypass bookings
+//add GUID generator
+//entitlements for sessions
+//appTokens
