@@ -1,0 +1,11 @@
+.playkit-subtitles > div > div {
+	white-space: nowrap !important;
+}
+.playkit-subtitles > div > div > div {
+	opacity: 0;
+	animation: showCue 0s linear 2000ms forwards;
+}
+@keyframes showCue {
+  to { opacity: 1; }
+}
+
