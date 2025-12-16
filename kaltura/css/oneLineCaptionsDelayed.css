@@ -3,9 +3,9 @@
 }
 .playkit-subtitles > div > div > div {
 	opacity: 0;
-	animation: showCue 0s linear 2000ms forwards;
+	animation: subtitleIn 0s linear 1000ms forwards;
 }
-@keyframes showCue {
+@keyframes subtitleIn {
   to { opacity: 1; }
 }
 
