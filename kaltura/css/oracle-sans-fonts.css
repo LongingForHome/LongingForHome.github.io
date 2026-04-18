@@ -1,0 +1,18 @@
+/* Regular */
+@font-face {
+font-family: 'Oracle Sans';
+src: url('https://cdnsecakmi.kaltura.com/p/2387622/sp/238762200/raw/entry_id/0_hggm0r5f/version/100002') format('true-type');
+font-weight: normal;
+}
+/* Semi Bold */
+@font-face {
+font-family: 'Oracle Sans';
+src: url('https://cdnsecakmi.kaltura.com/p/2387622/sp/238762200/raw/entry_id/0_6vjyt0zx/version/100002') format('true-type');
+font-weight: 700;
+}
+/* Extra Bold */
+@font-face {
+font-family: 'Oracle Sans';
+src: url('https://cdnsecakmi.kaltura.com/p/2387622/sp/238762200/raw/entry_id/0_99uplewm/version/100002') format('true-type');
+font-weight: 800;
+}
