@@ -1,18 +1,27 @@
 /* Regular */
 @font-face {
-font-family: 'Oracle Sans';
-src: url('https://longingforhome.github.io/kaltura/fonts/OracleSans_Rg.ttf') format('truetype');
-font-weight: normal;
+	font-family: 'Oracle Sans';
+	font-style: normal;
+	src: url(https://longingforhome.github.io/kaltura/fonts/OracleSans_Rg.ttf) format('truetype');
+	font-weight: 400;
+	font-stretch: 100%;
+  	font-display: swap;
 }
 /* Semi Bold */
 @font-face {
-font-family: 'Oracle Sans';
-src: url('https://longingforhome.github.io/kaltura/fonts/OracleSans_Bd.ttf') format('truetype');
-font-weight: 700;
+	font-family: 'Oracle Sans';
+	font-style: normal;
+	src: url(https://longingforhome.github.io/kaltura/fonts/OracleSans_Bd.ttf) format('truetype');
+	font-weight: 700;
+	font-stretch: 100%;
+  	font-display: swap;
 }
 /* Extra Bold */
 @font-face {
-font-family: 'Oracle Sans';
-src: url('https://longingforhome.github.io/kaltura/fonts/OracleSans_SBd.ttf') format('truetype');
-font-weight: 600;
+	font-family: 'Oracle Sans';
+	font-style: normal;
+	src: url(https://longingforhome.github.io/kaltura/fonts/OracleSans_SBd.ttf) format('truetype');
+	font-weight: 600;
+	font-stretch: 100%;
+  	font-display: swap;
 }
