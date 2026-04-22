@@ -7,21 +7,12 @@
 	font-stretch: 100%;
   	font-display: swap;
 }
-/* Semi Bold */
+/* Bold */
 @font-face {
 	font-family: 'Oracle Sans';
 	font-style: normal;
 	src: url(https://longingforhome.github.io/kaltura/fonts/OracleSans_Bd.ttf) format('truetype');
 	font-weight: 700;
-	font-stretch: 100%;
-  	font-display: swap;
-}
-/* Extra Bold */
-@font-face {
-	font-family: 'Oracle Sans';
-	font-style: normal;
-	src: url(https://longingforhome.github.io/kaltura/fonts/OracleSans_SBd.ttf) format('truetype');
-	font-weight: 600;
 	font-stretch: 100%;
   	font-display: swap;
 }
