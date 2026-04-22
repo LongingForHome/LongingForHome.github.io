@@ -2,7 +2,8 @@
 @font-face {
 	font-family: 'Oracle Sans';
 	font-style: normal;
-	src: url(https://longingforhome.github.io/kaltura/fonts/OracleSans_Rg.woff2) format('woff2'),
+	src: local('Oracle Sans'),
+		 url(https://longingforhome.github.io/kaltura/fonts/OracleSans_Rg.woff2) format('woff2'),
 		 url(https://longingforhome.github.io/kaltura/fonts/OracleSans_Rg.woff) format('woff'),
 		 url(https://longingforhome.github.io/kaltura/fonts/OracleSans_Rg.ttf) format('truetype');
 	font-weight: 400;
@@ -13,7 +14,8 @@
 @font-face {
 	font-family: 'Oracle Sans';
 	font-style: normal;
-	src: url(https://longingforhome.github.io/kaltura/fonts/OracleSans_Bd.woff2) format('woff2'),
+	src: local('Oracle Sans'),
+		 url(https://longingforhome.github.io/kaltura/fonts/OracleSans_Bd.woff2) format('woff2'),
 	     url(https://longingforhome.github.io/kaltura/fonts/OracleSans_Bd.woff) format('woff'),
 	     url(https://longingforhome.github.io/kaltura/fonts/OracleSans_Bd.ttf) format('truetype');
 	font-weight: 700;
