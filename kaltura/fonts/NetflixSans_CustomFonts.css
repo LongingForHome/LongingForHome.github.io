@@ -48,5 +48,5 @@
 }
 /* Set the default font size for the site - certain elements will override with x.x rem values to scale from the base */
 html {
-    font-size: 112.5% !important;
+    font-size: 125% !important;
 }
