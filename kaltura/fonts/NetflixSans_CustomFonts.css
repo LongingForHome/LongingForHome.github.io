@@ -1,0 +1,48 @@
+/* Regular */
+@font-face {
+	font-family: 'Netflix Sans';
+	font-style: normal;
+	src: local('Netflix Sans'),
+		 url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Normal_Normal.woff2) format('woff2'),
+		 url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Normal_Normal.woff) format('woff'),
+		 url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Normal_Normal.ttf) format('truetype');
+	font-weight: 400;
+	font-stretch: 100%;
+  	font-display: swap;
+}
+/* Regular Italic*/
+@font-face {
+	font-family: 'Netflix Sans';
+	font-style: italic;
+	src: local('Netflix Sans'),
+		 url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Normal_Italic.woff2) format('woff2'),
+		 url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Normal_Italic.woff) format('woff'),
+		 url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Normal_Italic.ttf) format('truetype');
+	font-weight: 400;
+	font-stretch: 100%;
+  	font-display: swap;
+}
+/* Bold */
+@font-face {
+	font-family: 'Netflix Sans';
+	font-style: normal;
+	src: local('Netflix Sans'),
+		 url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Bold_Normal.woff2) format('woff2'),
+	     url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Bold_Normal.woff) format('woff'),
+	     url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Bold_Normal.ttf) format('truetype');
+	font-weight: 700;
+	font-stretch: 100%;
+  	font-display: swap;
+}
+/* Bold Italic*/
+@font-face {
+	font-family: 'Netflix Sans';
+	font-style: italic;
+	src: local('Netflix Sans'),
+		 url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Bold_Italic.woff2) format('woff2'),
+	     url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Bold_Italic.woff) format('woff'),
+	     url(https://longingforhome.github.io/kaltura/fonts/NetflixSans_Bold_Italic.ttf) format('truetype');
+	font-weight: 700;
+	font-stretch: 100%;
+  	font-display: swap;
+}
