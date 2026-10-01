@@ -53,5 +53,5 @@ html {
 /* Force conformance on elements that don't adhere to the rem scaling */
 input,span,
 [role="textbox"] {
-    font-size: 1rem;
+    font-size: 1rem !important;
 }
